@@ -5,8 +5,8 @@
   "main": "build/index.js",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "gi+https://github.com/silvamfilipe/react-gentelella.git"
+    "type": "git",
+    "url": "gi+https://github.com/silvamfilipe/react-gentelella.git"
   },
   "bugs": {
     "url": "https://github.com/silvamfilipe/react-gentelella/issues"
@@ -16,13 +16,23 @@
     "react": "^16.4.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
+    "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/react": "^3.4.10",
+    "bootstrap": "^3.3.7",
+    "gentelella": "^1.4.0",
+    "jquery": "^1.12.4",
     "react": "^16.4.0",
+    "react-dom": "^16.4.2",
     "webpack": "^2.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "storybook": "start-storybook -s ./node_modules -p 9001 -c .storybook"
   },
   "author": {
     "name": "Filipe Silva",
