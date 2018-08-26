@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "Gentelella theme port for React",
   "main": "build/index.js",
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "gi+https://github.com/silvamfilipe/react-gentelella.git"
+  }
+  "bugs": {
+    "url": "https://github.com/silvamfilipe/react-gentelella/issues"
+  },
+  "homepage": "https://github.com/silvamfilipe/react-gentelella/blob/master/README.md",
   "peerDependencies": {
     "react": "^16.4.0"
   },
@@ -17,7 +26,8 @@
   },
   "author": {
     "name": "Filipe Silva",
-    "email": "silvam.filipe@gmail.com"
+    "email": "silvam.filipe@gmail.com",
+    "url": "https://github.com/silvamfilipe"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
