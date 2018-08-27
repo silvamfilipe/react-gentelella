@@ -1,0 +1,32 @@
+.nav.child_menu {
+    display: block !important;
+}
+
+.slide-appear {
+    opacity    : 0;
+    transition : opacity .7s ease-in;
+}
+
+.slide-appear.slide-appear-active {
+    opacity : 1;
+}
+
+.slide-enter {
+    height : 0;
+    transition : height .3s ease-in;
+    -webkit-transition: height .3s ease-out;
+}
+
+.slide-enter.slide-enter-active {
+    height : 100%;
+}
+
+.slide-leave {
+    height : 100%;
+    transition : height .3s ease-out;
+    -webkit-transition: height .3s ease-out;
+}
+
+.slide-leave.slide-leave-active {
+    height : 0;
+}

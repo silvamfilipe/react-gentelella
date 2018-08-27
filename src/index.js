@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'gentelella/build/css/custom.css';
 
+import './main.css';
+
 class Gentelella extends React.Component {
 
     componentWillMount() {

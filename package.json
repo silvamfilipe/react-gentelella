@@ -22,10 +22,12 @@
     "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.4.10",
     "bootstrap": "^3.3.7",
+    "classnames": "^2.2.6",
     "gentelella": "^1.4.0",
     "jquery": "^3.3.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.2",
+    "react-transition-group": "^1.2.1",
     "webpack": "^2.6.1"
   },
   "scripts": {

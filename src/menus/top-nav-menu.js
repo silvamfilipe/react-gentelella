@@ -36,7 +36,7 @@ class TopMenu extends Component {
     }
 
     handleClick(event) {
-        if (this.node.contains(event.target)) { return; }
+        if (this.node && this.node.contains(event.target)) { return; }
         this.setState({ open: false });
     }
 
