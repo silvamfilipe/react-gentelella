@@ -9,13 +9,15 @@ import ProfileQuickInfo from "../src/layout-structure/profile-quick-info";
 import TopNavigation from "../src/layout-structure/top-navigation";
 import TopMenu from "../src/menus/top-nav-menu";
 import TopMenuItem from "../src/menus/top-nav-menu-item";
+import PageContent from "../src/layout-structure/page-content";
+import Footer from "../src/layout-structure/footer";
 
 const stories = storiesOf('Main components', module);
 
 stories.addDecorator(withKnobs);
 
 stories.add('Blank page', () => (
-    <Gentelella>
+    <Gentelella fixedFooter={true}>
         <SideBar>
             <SideBarTitle />
             <ProfileQuickInfo name="Jane Doe"/>
@@ -37,5 +39,11 @@ stories.add('Blank page', () => (
                 </TopMenuItem>
             </TopMenu>
         </TopNavigation>
+
+        <PageContent>Test!</PageContent>
+
+        <Footer>
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </Footer>
     </Gentelella>
 ));

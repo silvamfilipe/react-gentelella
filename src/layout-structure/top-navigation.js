@@ -1,6 +1,11 @@
+import _$ from 'jquery';
 import React, { Component } from 'react';
 
 class TopNavigation extends Component {
+
+    static handleMenuToggle() {
+        _$('body').toggleClass('nav-md nav-sm');
+    }
 
     render() {
         return (
@@ -9,7 +14,7 @@ class TopNavigation extends Component {
                 <div className="nav_menu">
                     <nav>
                         <div className="nav toggle">
-                            <a id="menu_toggle"><i className="fa fa-bars" /></a>
+                            <a onClick={TopNavigation.handleMenuToggle} id="menu_toggle"><i className="fa fa-bars" /></a>
                         </div>
                         <ul className="nav navbar-nav navbar-right">
                             { this.props.children }

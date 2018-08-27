@@ -65,7 +65,7 @@ TopMenu.propTypes = {
 TopMenu.defaultProps = {
     label: (
         <Fragment>
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/> John Doe
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/> Jane Doe
         </Fragment>
     )
 };
