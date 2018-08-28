@@ -9,7 +9,8 @@ class SideBarNestedMenu extends Component {
         super(props);
 
         this.state = {
-            open: false
+            open: false,
+            className: ''
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -22,7 +23,7 @@ class SideBarNestedMenu extends Component {
             return;
         }
 
-        this.setState({ open: false });
+        this.setState({ open: false, className: '' });
     }
 
     componentWillMount()
@@ -38,7 +39,7 @@ class SideBarNestedMenu extends Component {
         const { parent } = this.props;
         const event = new CustomEvent(NESTED_MENU_CLICK, { detail: parent ? parent : this });
         document.dispatchEvent(event);
-        this.setState({ open: !this.state.open });
+        this.setState({ open: !this.state.open, className: 'active' });
     }
 
 
@@ -54,18 +55,16 @@ class SideBarNestedMenu extends Component {
                 { childrenWithParent }
             </ul>
         ) : '';
-        const active = this.state.open ? 'active' : '';
+
         return (
-            <li className={ active }>
+            <li className={ this.state.className }>
                 <a onClick={ this.handleClick }>
                     { label }
                 </a>
                 <CSSTransitionGroup
                     transitionName="slide"
-                    transitionAppear={true}
-                    transitionAppearTimeout={300}
-                    transitionEnterTimeout={300}
-                    transitionLeaveTimeout={300}
+                    transitionEnterTimeout={700}
+                    transitionLeaveTimeout={0}
                 >
                     { component }
                 </CSSTransitionGroup>

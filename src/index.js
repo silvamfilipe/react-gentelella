@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'gentelella/build/css/custom.css';
+import './gentelella.css';
 
 import './main.css';
 
