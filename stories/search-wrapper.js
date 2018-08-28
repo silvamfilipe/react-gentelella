@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import SearchWidget from "../src/widgets/search";
+
+import { SearchWidget } from "../src";
 
 class SearchWrapper extends Component {
 

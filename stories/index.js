@@ -1,23 +1,19 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, number } from '@storybook/addon-knobs/react';
 
-import Gentelella from '../src';
-import SideBar from "../src/layout-structure/sidebar";
-import SideBarTitle from "../src/layout-structure/sidebar-title";
-import ProfileQuickInfo from "../src/layout-structure/profile-quick-info";
-import TopNavigation from "../src/layout-structure/top-navigation";
+import {
+    Gentelella, PanelBody,
+    SideBar, SideBarTitle, PanelHeader, Panel, PageTitle,
+    Footer, PageContent, TopNavigation, ProfileQuickInfo
+} from '../src';
+
 import TopMenu from "../src/menus/top-nav-menu";
 import TopMenuItem from "../src/menus/top-nav-menu-item";
-import PageContent from "../src/layout-structure/page-content";
-import Footer from "../src/layout-structure/footer";
 import SideBarMenu from "../src/menus/sidebar-menu";
 import SideBarMenuSection from "../src/menus/sidebar-menu-section";
 import SideBarMenuItem from "../src/menus/sidebar-menu-item";
-import PageTitle from "../src/layout-structure/page-title";
 import SearchWrapper from "./search-wrapper";
-import Panel from "../src/layout-structure/panel";
-import PanelHeader from "../src/layout-structure/panel-heder";
 
 const stories = storiesOf('Main components', module);
 
@@ -84,6 +80,9 @@ stories.add('Basic layout', () => {
                                     </li>
                                 </ul>
                             </PanelHeader>
+                            <PanelBody>
+                                This is an example body!
+                            </PanelBody>
                         </Panel>
                     </div>
                 </div>
