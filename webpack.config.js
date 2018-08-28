@@ -8,6 +8,11 @@ module.exports = {
   },
   module: {
     rules: [
+        { test: /\.(eot|woff|woff2|ttf|svg)$/, loader: "file-loader" },
+      {
+        test: /\.css$/,
+        loaders: [ 'style-loader', 'css-loader' ]
+      },
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),

@@ -1,6 +1,6 @@
 {
   "name": "react-gentelella",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Gentelella theme port for React",
   "main": "build/index.js",
   "license": "MIT",
@@ -16,13 +16,7 @@
     "react": "^16.4.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
-    "@fortawesome/react-fontawesome": "0.1.0-11",
-    "@storybook/addon-knobs": "^3.4.10",
-    "@storybook/react": "^3.4.10",
     "bootstrap": "^3.3.7",
-    "classnames": "^2.2.6",
     "gentelella": "^1.4.0",
     "jquery": "^3.3.1",
     "react": "^16.4.0",
@@ -47,6 +41,10 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/react": "^3.4.10",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0"
   }
 }
