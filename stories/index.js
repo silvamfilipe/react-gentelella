@@ -3,16 +3,25 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean, number } from '@storybook/addon-knobs/react';
 
 import {
-    Gentelella, PanelBody,
-    SideBar, SideBarTitle, PanelHeader, Panel, PageTitle,
-    Footer, PageContent, TopNavigation, ProfileQuickInfo
+    Gentelella,
+    PanelBody,
+    SideBar,
+    SideBarTitle,
+    PanelHeader,
+    Panel,
+    PageTitle,
+    Footer,
+    PageContent,
+    TopNavigation,
+    ProfileQuickInfo,
+    SideBarMenu,
+    SideBarMenuSection,
+    SideBarMenuItem,
+    TopMenu,
+    TopMenuItem, SideBarNestedMenu
 } from '../src';
 
-import TopMenu from "../src/menus/top-nav-menu";
-import TopMenuItem from "../src/menus/top-nav-menu-item";
-import SideBarMenu from "../src/menus/sidebar-menu";
-import SideBarMenuSection from "../src/menus/sidebar-menu-section";
-import SideBarMenuItem from "../src/menus/sidebar-menu-item";
+
 import SearchWrapper from "./search-wrapper";
 
 const stories = storiesOf('Main components', module);
@@ -20,8 +29,6 @@ const stories = storiesOf('Main components', module);
 stories.addDecorator(withKnobs);
 
 stories.add('Basic layout', () => {
-    let searchValue = '';
-
     return(
         <Gentelella fixedFooter={true}>
             <SideBar>
@@ -30,7 +37,10 @@ stories.add('Basic layout', () => {
                 <SideBarMenu>
                     <SideBarMenuSection label="General">
                         <SideBarMenuItem><a href="javascript:"> <i className="fa fa-home"/> Home</a></SideBarMenuItem>
-                        <SideBarMenuItem><a href="javascript:"> <i className="fa fa-database"/> Databases</a></SideBarMenuItem>
+                        <SideBarNestedMenu label={<span><i className="fa fa-database"/> Databases</span>}>
+                            <SideBarMenuItem><a>MySql</a></SideBarMenuItem>
+                            <SideBarMenuItem><a>MongoDB</a></SideBarMenuItem>
+                        </SideBarNestedMenu>
                     </SideBarMenuSection>
                 </SideBarMenu>
             </SideBar>
@@ -64,8 +74,7 @@ stories.add('Basic layout', () => {
                             <PanelHeader>
                                 <h2>Plain page example</h2>
                                 <ul className="nav navbar-right panel_toolbox">
-                                    <li><a className="collapse-link"><i className="fa fa-chevron-up"/></a>
-                                    </li>
+                                    <li><a className="collapse-link"><i className="fa fa-chevron-up"/></a></li>
                                     <li className="dropdown">
                                         <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button"
                                            aria-expanded="false"><i className="fa fa-wrench"/></a>
