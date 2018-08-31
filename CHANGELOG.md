@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+[v0.2.3] 2018-08-31
+### Added
+- Version of gentelella without the original CSS (for css override by the app)
+
 [v0.2.2] 2018-08-29
 ### Fixed
 - Export statements to properly add all modules to the build package
@@ -28,8 +32,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Package ans repository setup
 
-[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.2...HEAD
-[v0.2.1]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.1...v0.2.2
+[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.3...HEAD
+[v0.2.3]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.2...v0.2.3
+[v0.2.2]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.1...v0.2.2
 [v0.2.1]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/silvamfilipe/react-gentelella/compare/e633d30...v0.1.0
