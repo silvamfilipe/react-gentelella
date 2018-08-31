@@ -30,7 +30,7 @@ stories.addDecorator(withKnobs);
 
 stories.add('Basic layout', () => {
     return(
-        <Gentelella fixedFooter={true}>
+        <Gentelella fixedFooter={true} >
             <SideBar>
                 <SideBarTitle />
                 <ProfileQuickInfo name="Jane Doe"/>

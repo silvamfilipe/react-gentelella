@@ -3,15 +3,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './gentelella.css';
 
 import './main.css';
 
 class Gentelella extends React.Component {
 
     componentWillMount() {
+        const { loadCss } = this.props;
         const envClass = this.props.fixedFooter ? 'nav-md footer_fixed' : 'nav-md';
         _$('body').addClass(envClass);
+
+        if (loadCss) {
+            require('./gentelella.css');
+        }
     }
 
     render() {
@@ -26,11 +30,13 @@ class Gentelella extends React.Component {
 }
 
 Gentelella.propTypes = {
-    fixedFooter: PropTypes.bool.isRequired
+    fixedFooter: PropTypes.bool.isRequired,
+    loadCss: PropTypes.bool.isRequired
 };
 
 Gentelella.defaultProps = {
-    fixedFooter: false
+    fixedFooter: false,
+    loadCss: true
 };
 
 export default Gentelella;
