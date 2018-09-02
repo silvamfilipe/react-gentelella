@@ -18,7 +18,7 @@ import {
     SideBarMenuSection,
     SideBarMenuItem,
     TopMenu,
-    TopMenuItem, SideBarNestedMenu
+    TopMenuItem, SideBarNestedMenu, DateTimePicker
 } from '../src';
 
 
@@ -28,40 +28,54 @@ const stories = storiesOf('Main components', module);
 
 stories.addDecorator(withKnobs);
 
+const sideBar = (
+    <SideBar>
+        <SideBarTitle />
+        <ProfileQuickInfo name="Jane Doe"/>
+        <SideBarMenu>
+            <SideBarMenuSection label="General">
+                <SideBarMenuItem><a href="javascript:"> <i className="fa fa-home"/> Home</a></SideBarMenuItem>
+                <SideBarNestedMenu label={<span><i className="fa fa-database"/> Databases</span>}>
+                    <SideBarMenuItem><a>MySql</a></SideBarMenuItem>
+                    <SideBarMenuItem><a>MongoDB</a></SideBarMenuItem>
+                </SideBarNestedMenu>
+            </SideBarMenuSection>
+        </SideBarMenu>
+    </SideBar>
+);
+
+const topNav = (
+    <TopNavigation>
+        <TopMenu >
+            <TopMenuItem>
+                <a href="javascript:"> Profile</a>
+            </TopMenuItem>
+            <TopMenuItem>
+                <a href="javascript:">
+                    <span className="badge bg-red pull-right">50%</span>
+                    <span>Settings</span>
+                </a>
+            </TopMenuItem>
+            <TopMenuItem>
+                <a href="javascript:">Help</a>
+            </TopMenuItem>
+        </TopMenu>
+
+    </TopNavigation>
+);
+
+const footer = (
+    <Footer>
+        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+    </Footer>
+);
+
 stories.add('Basic layout', () => {
     return(
         <Gentelella fixedFooter={true} >
-            <SideBar>
-                <SideBarTitle />
-                <ProfileQuickInfo name="Jane Doe"/>
-                <SideBarMenu>
-                    <SideBarMenuSection label="General">
-                        <SideBarMenuItem><a href="javascript:"> <i className="fa fa-home"/> Home</a></SideBarMenuItem>
-                        <SideBarNestedMenu label={<span><i className="fa fa-database"/> Databases</span>}>
-                            <SideBarMenuItem><a>MySql</a></SideBarMenuItem>
-                            <SideBarMenuItem><a>MongoDB</a></SideBarMenuItem>
-                        </SideBarNestedMenu>
-                    </SideBarMenuSection>
-                </SideBarMenu>
-            </SideBar>
+            { sideBar }
 
-            <TopNavigation>
-                <TopMenu >
-                    <TopMenuItem>
-                        <a href="javascript:"> Profile</a>
-                    </TopMenuItem>
-                    <TopMenuItem>
-                        <a href="javascript:">
-                            <span className="badge bg-red pull-right">50%</span>
-                            <span>Settings</span>
-                        </a>
-                    </TopMenuItem>
-                    <TopMenuItem>
-                        <a href="javascript:">Help</a>
-                    </TopMenuItem>
-                </TopMenu>
-
-            </TopNavigation>
+            { topNav }
 
             <PageContent>
                 <PageTitle title={"Blank page"}>
@@ -98,9 +112,36 @@ stories.add('Basic layout', () => {
 
             </PageContent>
 
-            <Footer>
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-            </Footer>
+            { footer }
         </Gentelella>
     );
 });
+
+const formStories = storiesOf('Advanced forms', module);
+formStories.addDecorator(withKnobs);
+
+formStories.add('Date Time Picker', () => (
+    <Gentelella fixedFooter={true} >
+        { sideBar }
+        { topNav }
+        <PageContent>
+            <PageTitle title={"Advanced forms"}/>
+            <Panel>
+                <PanelHeader>
+                    <h2>Date time picker</h2>
+                </PanelHeader>
+                <PanelBody>
+                    <div className="container">
+                        <div className="row">
+                            <div className='col-sm-4'>
+                                <DateTimePicker closeOnSelect={true} locale="pt"/>
+                            </div>
+                        </div>
+                    </div>
+                </PanelBody>
+            </Panel>
+
+        </PageContent>
+        { footer }
+    </Gentelella>
+));
