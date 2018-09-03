@@ -134,7 +134,7 @@ formStories.add('Date Time Picker', () => (
                     <div className="container">
                         <div className="row">
                             <div className='col-sm-4'>
-                                <DateTimePicker closeOnSelect={true} locale="pt"/>
+                                <DateTimePicker closeOnSelect={true} inputProps={{readOnly: true}} locale="pt"/>
                             </div>
                         </div>
                     </div>

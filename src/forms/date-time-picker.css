@@ -220,3 +220,10 @@ td.rdtYear:hover {
 .rdt input.has-feedback-left {
   padding-right: 10px;
 }
+
+.date-time-picker .form-control-feedback {
+  margin-top: 5px;
+}
+.date-time-picker .form-control-feedback.left {
+  left: 3px;
+}
