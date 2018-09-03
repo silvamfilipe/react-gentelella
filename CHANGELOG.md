@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+[v0.3.0] 2018-09-03
+### Added
+- Date time picker form component
+
+
 [v0.2.5] 2018-08-31
 ### Changed
 - A prop passed to Gentelella can enable/disable original CSS file to be loaded
@@ -41,7 +46,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Package ans repository setup
 
-[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.5...HEAD
+[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.5...v0.3.0
 [v0.2.5]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.4...v0.2.5
 [v0.2.4]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.3...v0.2.4
 [v0.2.3]: https://github.com/silvamfilipe/react-gentelella/compare/v0.2.2...v0.2.3
