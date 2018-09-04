@@ -18,7 +18,7 @@ import {
     SideBarMenuSection,
     SideBarMenuItem,
     TopMenu,
-    TopMenuItem, SideBarNestedMenu, DateTimePicker
+    TopMenuItem, SideBarNestedMenu, DateTimePicker, Notification
 } from '../src';
 
 
@@ -145,3 +145,28 @@ formStories.add('Date Time Picker', () => (
         { footer }
     </Gentelella>
 ));
+
+const uiElements = storiesOf('UI Elements', module);
+uiElements.addDecorator(withKnobs);
+
+uiElements.add('Notification', () => (
+    <Gentelella fixedFooter={true} >
+        { sideBar }
+        { topNav }
+        <PageContent>
+            <PageTitle title={"UI Elements"}/>
+            <Panel>
+                <PanelHeader>
+                    <h2>Notifications</h2>
+                </PanelHeader>
+                <PanelBody>
+                    <Notification type="info" title="Sticky Success" text="Sticky success... I'm not even gonna make a joke."/>
+                </PanelBody>
+            </Panel>
+
+        </PageContent>
+        { footer }
+    </Gentelella>
+
+));
+

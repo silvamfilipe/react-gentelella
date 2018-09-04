@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+[v0.4.0] 2018-09-04
+### Added
+- PNotify notification component.  
+
 [v0.3.1] 2018-09-03
 ### fixed
 - Input props passed to the wrapped input on date time picker component. 
