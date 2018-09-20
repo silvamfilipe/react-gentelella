@@ -23,6 +23,8 @@ import {
 
 
 import SearchWrapper from "./search-wrapper";
+import Tabs from "../src/ui-elements/tabs";
+import Tab from "../src/ui-elements/tab";
 
 const stories = storiesOf('Main components', module);
 
@@ -161,6 +163,35 @@ uiElements.add('Notification', () => (
                 </PanelHeader>
                 <PanelBody>
                     <Notification type="info" title="Sticky Success" text="Sticky success... I'm not even gonna make a joke."/>
+                </PanelBody>
+            </Panel>
+
+        </PageContent>
+        { footer }
+    </Gentelella>
+
+));
+
+
+uiElements.add('Tabs', () => (
+    <Gentelella fixedFooter={true} >
+        { sideBar }
+        { topNav }
+        <PageContent>
+            <PageTitle title={"UI Elements"}/>
+            <Panel>
+                <PanelHeader>
+                    <h2>Tabs</h2>
+                </PanelHeader>
+                <PanelBody>
+                    <Tabs>
+                        <Tab title={<span>Home <i className="fa fa-home"/></span>} active>
+                            Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+                        </Tab>
+                        <Tab title="Profile">
+                            Food truck sadgposjgoiasdjfsdajflksadfsdf  sdg sgd gasg asn four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+                        </Tab>
+                    </Tabs>
                 </PanelBody>
             </Panel>
 
