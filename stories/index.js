@@ -18,13 +18,12 @@ import {
     SideBarMenuSection,
     SideBarMenuItem,
     TopMenu,
-    TopMenuItem, SideBarNestedMenu, DateTimePicker, Notification
+    TopMenuItem, SideBarNestedMenu, DateTimePicker, Notification,
+    Tabs, Tab
 } from '../src';
 
 
 import SearchWrapper from "./search-wrapper";
-import Tabs from "../src/ui-elements/tabs";
-import Tab from "../src/ui-elements/tab";
 
 const stories = storiesOf('Main components', module);
 
