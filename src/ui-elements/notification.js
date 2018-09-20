@@ -76,7 +76,6 @@ class Notification extends React.Component {
         if  (pnotifyOptions.animateOut) {
             delete pnotifyOptions.animateOut;
         }
-        console.log(pnotifyOptions);
         const widget = new PNotify(pnotifyOptions);
         if (this.props.addClass !== '') {
 
