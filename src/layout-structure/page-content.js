@@ -22,6 +22,7 @@ class PageContent extends Component {
         let contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
 
         contentHeight -=  navHeight + footerHeight;
+        _$('.sidebar').css('height', contentHeight+'px');
 
         this.setState({ contentHeight });
     }

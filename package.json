@@ -1,6 +1,6 @@
 {
   "name": "react-gentelella",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Gentelella theme port for React",
   "main": "build/index.js",
   "license": "MIT",
