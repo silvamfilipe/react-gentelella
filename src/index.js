@@ -1,7 +1,4 @@
-export { default as Gentelella } from './gentelella';
+import React from "react";
+import ReactDOM from "react-dom";
 
-export * from './layout-structure/index';
-export * from './widgets/index';
-export * from './menus/index';
-export * from './forms/index';
-export * from './ui-elements/index';
+ReactDOM.render(<div>Hello world</div>, document.getElementById("root"));

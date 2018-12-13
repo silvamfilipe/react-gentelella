@@ -1,9 +1,16 @@
 {
   "name": "react-gentelella",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Gentelella theme port for React",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
   "license": "MIT",
+  "author": {
+    "name": "Filipe Silva",
+    "email": "silvam.filipe@gmail.com",
+    "url": "https://github.com/silvamfilipe"
+  },
   "repository": {
     "type": "git",
     "url": "gi+https://github.com/silvamfilipe/react-gentelella.git"
@@ -12,40 +19,32 @@
     "url": "https://github.com/silvamfilipe/react-gentelella/issues"
   },
   "homepage": "https://github.com/silvamfilipe/react-gentelella/blob/master/README.md",
-  "peerDependencies": {
-    "react": "^16.4.0"
-  },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "gentelella": "^1.4.0",
-    "jquery": "^3.3.1",
-    "pnotify": "^3.2.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.2",
-    "react-transition-group": "^1.2.1",
-    "webpack": "^2.6.1"
+
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "build": "webpack",
-    "storybook": "start-storybook -s ./node_modules -p 9001 -c .storybook"
+    "start": "react-scripts start",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "author": {
-    "name": "Filipe Silva",
-    "email": "silvam.filipe@gmail.com",
-    "url": "https://github.com/silvamfilipe"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1",
-    "@storybook/addon-knobs": "^3.4.10",
-    "@storybook/react": "^3.4.10",
-    "css-loader": "^1.0.0",
-    "style-loader": "^0.23.0"
+    "babel-cli": "^6.26.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
   }
 }
