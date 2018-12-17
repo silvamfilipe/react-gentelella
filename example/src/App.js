@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import {
   Gentelella, BaseTheme, Sidebar, SidebarTitle, SidebarFooter,
-  SidebarFooterMenuItem, TopNavigation, TopMenu,
+  SidebarFooterMenuItem, TopNavigation, TopMenu, TopUserMenu,
   ProfileQuickInfo, TopDropdownList, FaIcon, MenuItem
 } from 'react-gentelella'
 import Badge from 'react-bootstrap/es/Badge'
@@ -12,7 +12,7 @@ export default class App extends Component {
 
   render () {
 
-    const picture = <img src="https://randomuser.me/api/portraits/women/26.jpg" alt=""/>
+    const picture = <img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/>;
 
     return (
       <div>
@@ -45,7 +45,7 @@ export default class App extends Component {
                   <a href="/">Help</a>
                 </MenuItem>
                 <MenuItem>
-                  <a href="/"><i className="fa fa-sign-out pull-right"/>&mnsp;Log Out</a>
+                  <a href="/"><i className="fa fa-sign-out pull-right"/>&nbsp;Log Out</a>
                 </MenuItem>
               </TopUserMenu>
               <TopDropdownList number={'4'} customClass={'bg-green'} label={<FaIcon icon='envelope-o'/>}>

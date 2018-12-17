@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TopUserMenu extends Component {
 
@@ -8,9 +8,9 @@ class TopUserMenu extends Component {
   };
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.setWrapperRef = this.setWrapperRef.bind(this)
+    this.setWrapperRef = this.setWrapperRef.bind(this);
   }
 
   setWrapperRef(node) {
@@ -20,7 +20,7 @@ class TopUserMenu extends Component {
 
   handleClick = () => {
     this.setState({open: !this.state.open})
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside);
@@ -31,16 +31,16 @@ class TopUserMenu extends Component {
   }
 
   handleClickOutside = e => {
-    if (!this.state.open) return
+    if (!this.state.open) return;
 
     if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
       this.setState({open: false})
     }
-  }
+  };
 
   render() {
-    const openClass = this.state.open ? 'open' : ''
-    const { name, picture, children } = this.props
+    const openClass = this.state.open ? 'open' : '';
+    const { name, picture, children } = this.props;
     return (
       <li className={openClass}>
         <a ref={this.setWrapperRef} href="#" onClick={this.handleClick} className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -59,11 +59,11 @@ TopUserMenu.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.any,
   children: PropTypes.any
-}
+};
 
 TopUserMenu.defaultProps = {
   name: 'Jane Doe',
   picture: <img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/>
-}
+};
 
 export default TopUserMenu
