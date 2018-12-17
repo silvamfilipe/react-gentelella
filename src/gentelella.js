@@ -1,18 +1,24 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 require('bootstrap/dist/css/bootstrap.css');
 
 class Gentelella extends Component {
   componentWillMount() {
-    document.body.className = 'nav-md'
+    document.body.className = 'nav-md';
+
+    if (this.props.fixedFooter) {
+      document.body.className += ' footer_fixed'
+    }
   }
 
   render() {
+    const { children } = this.props;
     return (
+
       <div className={'container body'}>
         <div className={'main_container'}>
-          {this.props.children}
+          { children }
         </div>
       </div>
     )
@@ -20,7 +26,12 @@ class Gentelella extends Component {
 }
 
 Gentelella.propTypes = {
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+  fixedFooter: PropTypes.bool.isRequired
+};
+
+Gentelella.defaultProps = {
+  fixedFooter: false
+};
 
 export default Gentelella
