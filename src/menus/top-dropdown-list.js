@@ -7,9 +7,27 @@ class TopDropdownList extends Component {
         open: false
     };
 
+    setWrapperRef = node => this.wrapperRef = node;
+
     handleClick = e => {
         e.preventDefault();
         this.setState({ open: !this.state.open });
+    };
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    handleClickOutside = e => {
+        if (!this.state.open) return;
+
+        if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
+            this.setState({open: false})
+        }
     };
 
     render() {
@@ -20,7 +38,7 @@ class TopDropdownList extends Component {
 
         return(
             <li role="presentation" className={ elmClass }>
-                <a href="/" onClick={ this.handleClick } className="dropdown-toggle info-number" aria-expanded={ open }>
+                <a ref={this.setWrapperRef} href="#" onClick={ this.handleClick } className="dropdown-toggle info-number" aria-expanded={ open }>
                     { label }
                     { numberBadge }
                 </a>
