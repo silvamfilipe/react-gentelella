@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import {
   Gentelella, BaseTheme, Sidebar, SidebarTitle, SidebarFooter,
-  SidebarFooterMenuItem, TopNavigation, TopMenu, TopUserMenu, MenuItem
+  SidebarFooterMenuItem, TopNavigation, TopMenu,
+  ProfileQuickInfo, TopDropdownList, FaIcon, MenuItem
 } from 'react-gentelella'
 import Badge from 'react-bootstrap/es/Badge'
 
@@ -25,6 +26,7 @@ export default class App extends Component {
               <SidebarFooterMenuItem title={'Lock'} glyphIcon={'eye-close'} />
               <SidebarFooterMenuItem title={'Logout'} glyphIcon={'off'} />
             </SidebarFooter>
+            <ProfileQuickInfo name="Jane Doe" />
           </Sidebar>
 
           <TopNavigation>
@@ -46,6 +48,59 @@ export default class App extends Component {
                   <a href="/"><i className="fa fa-sign-out pull-right"/>&mnsp;Log Out</a>
                 </MenuItem>
               </TopUserMenu>
+              <TopDropdownList number={'4'} customClass={'bg-green'} label={<FaIcon icon='envelope-o'/>}>
+                <MenuItem>
+                  <a href="/">
+                    <span className="image"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="John Smith"/></span>
+                    <span>
+                        <span>John Smith</span>
+                        <span className="time">3 mins ago</span>
+                      </span>
+                    <span className="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                  </a>
+                </MenuItem>
+
+                <MenuItem>
+                  <a href="/">
+                    <span className="image"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="John Smith"/></span>
+                    <span>
+                        <span>John Smith</span>
+                        <span className="time">3 mins ago</span>
+                      </span>
+                    <span className="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                  </a>
+                </MenuItem>
+
+                <MenuItem>
+                  <a href="/">
+                    <span className="image"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="John Smith"/></span>
+                    <span>
+                        <span>John Smith</span>
+                        <span className="time">3 mins ago</span>
+                      </span>
+                    <span className="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                  </a>
+                </MenuItem>
+
+                <MenuItem>
+                  <a href="/">
+                    <span className="image"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="John Smith"/></span>
+                    <span>
+                        <span>John Smith</span>
+                        <span className="time">3 mins ago</span>
+                      </span>
+                    <span className="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                  </a>
+                </MenuItem>
+              </TopDropdownList>
             </TopMenu>
           </TopNavigation>
 

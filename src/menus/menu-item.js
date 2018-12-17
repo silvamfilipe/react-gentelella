@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const MenuItem = ({ children }) => (
-  <li>
-    { children }
-  </li>
-)
+const MenuItem = ({ children }) => (<li>{ children }</li>);
 
-export default MenuItem
+export default MenuItem;
