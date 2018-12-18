@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Sidebar from "./app/sidebar";
 import HeadNav from "./app/head-nav";
 import PlainPage from './extras/plain-page'
+import MultiLevel from "./multi-level";
 
 const App = () => (
     <div>
@@ -16,6 +17,7 @@ const App = () => (
 
                   <Switch>
                     <Route path="/extras/plain-page" component={ PlainPage }/>
+                    <Route path="/multilevel-menu" component={ MultiLevel }/>
                     <Route component={ PlainPage }/>
                   </Switch>
 
