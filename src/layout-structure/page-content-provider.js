@@ -8,7 +8,8 @@ class PageContentProvider extends Component {
         contentHeight: 400,
         sideBarHeight: window.innerHeight,
         navSmall: document.body.className.match(/(nav-sm)/i) && true,
-        fixedFooter: document.body.className.match(/(footer_fixed)/i) && true
+        fixedSidebar: document.body.className.match(/(menu_fixed)/i) && true,
+        fixedFooter: document.body.className.match(/(footer_fixed)/i) && true,
     };
 
     componentDidMount() {
@@ -26,6 +27,11 @@ class PageContentProvider extends Component {
     }
 
     updateSideBar = height => {
+        if (this.state.fixedSidebar) {
+          this.setState({sideBarHeight: window.innerHeight});
+          return;
+        }
+
         const sideBarHeight = Math.max(height, window.innerHeight);
         this.setState({sideBarHeight});
     };

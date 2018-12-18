@@ -10,6 +10,10 @@ class Gentelella extends Component {
     if (this.props.fixedFooter) {
       document.body.className += ' footer_fixed'
     }
+
+    if (this.props.fixedSidebar) {
+      document.body.className += ' menu_fixed'
+    }
   }
 
   render() {
@@ -27,11 +31,13 @@ class Gentelella extends Component {
 
 Gentelella.propTypes = {
   children: PropTypes.any,
-  fixedFooter: PropTypes.bool.isRequired
+  fixedFooter: PropTypes.bool.isRequired,
+  fixedSidebar: PropTypes.bool.isRequired
 };
 
 Gentelella.defaultProps = {
-  fixedFooter: false
+  fixedFooter: false,
+  fixedSidebar: false
 };
 
 export default Gentelella

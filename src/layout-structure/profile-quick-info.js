@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types';
 
-const ProfileQuickInfo = ({ picture, greeting, name}) => {
-    return (
-        <div className="profile clearfix">
-            <div className="profile_pic">
-                <img src={picture} alt="..." className="img-circle profile_img"/>
-            </div>
-            <div className="profile_info">
-                <span>{greeting}</span>
-                <h2>{name}</h2>
-            </div>
-            <div className="clearfix"/>
+const ProfileQuickInfo = ({ picture, greeting, name }) => {
+  return (
+    <Fragment>
+      <div className="profile clearfix">
+        <div className="profile_pic">
+          <img src={picture} alt="..." className="img-circle profile_img"/>
         </div>
-    );
+        <div className="profile_info">
+          <span>{greeting}</span>
+          <h2>{name}</h2>
+        </div>
+        <div className="clearfix"/>
+      </div>
+      <br />
+    </Fragment>
+
+  );
 };
 
 ProfileQuickInfo.propTypes = {
