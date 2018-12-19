@@ -5161,6 +5161,11 @@ joi@^11.1.1:
     isemail "3.x.x"
     topo "2.x.x"
 
+jquery@>=1.6.0:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
+
 js-base64@^2.1.9:
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.9.tgz#748911fb04f48a60c4771b375cac45a80df11c03"
@@ -6463,6 +6468,13 @@ pluralize@^7.0.0:
 pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
+
+pnotify@^3:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/pnotify/-/pnotify-3.2.1.tgz#eb68fb57fd1835764f23253235c1e973c456eb19"
+  integrity sha512-SC1Ey++5TAn3K1khjmGg0YBt0mdE5ygtQYodzczOLoQ9gImpuRzye0fWqbbodfj/C1UZvnU96Yt6pMJpNzYhpA==
+  dependencies:
+    jquery ">=1.6.0"
 
 pnp-webpack-plugin@1.1.0:
   version "1.1.0"

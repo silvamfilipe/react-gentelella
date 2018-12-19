@@ -1,6 +1,7 @@
 import React from 'react';
 import { Page, PageTitle, PanelBody, Panel, PanelHeader } from 'react-gentelella';
 import GlobalSearch from "../app/global-search";
+import GeneralPanelToolbox from "../app/general-panel-toolbox";
 
 const PlainPage = () => (
   <Page>
@@ -10,6 +11,7 @@ const PlainPage = () => (
       <Panel>
           <PanelHeader>
             <h2>Plain Page</h2>
+              <GeneralPanelToolbox/>
           </PanelHeader>
           <PanelBody>
               Add content to the page ...

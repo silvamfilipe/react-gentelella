@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   Sidebar as GtSidebarTitle, SidebarTitle, SidebarFooter, SidebarFooterMenuItem, ProfileQuickInfo,
-  SidebarMenuSection, SidebarMenu, MenuItem, SidebarNestedMenu
+  SidebarMenuSection, SidebarMenu
 } from 'react-gentelella';
+import MultilevelMenu from "./sidebar/multilevel-menu";
+import ExtrasMenu from "./sidebar/extras-menu";
+import UiElements from "./sidebar/ui-elements-menu";
 
 const elem = document.documentElement;
 
@@ -24,45 +26,15 @@ const Sidebar = () => (
         <SidebarTitle/>
         <ProfileQuickInfo name="Jane Doe" picture='https://randomuser.me/api/portraits/women/44.jpg' />
       <SidebarMenu>
+          <SidebarMenuSection title={"General"}>
+              <UiElements/>
+          </SidebarMenuSection>
 
-        <SidebarMenuSection title={"Live On"}>
-          <SidebarNestedMenu icon={'sitemap'} label={'Multilevel Menu'}>
-            <MenuItem>
-              <Link to={"/multilevel-menu/level-1"}>Level 1</Link>
-            </MenuItem>
+          <SidebarMenuSection title={"Live On"}>
+              <ExtrasMenu/>
+              <MultilevelMenu/>
+          </SidebarMenuSection>
 
-            <MenuItem>
-              <Link to={"/multilevel-menu/level-1"}>Level 1</Link>
-            </MenuItem>
-
-            <MenuItem>
-              <Link to={"/multilevel-menu/level-1"}>Level 1</Link>
-            </MenuItem>
-
-            <SidebarNestedMenu label={'More Levels'}>
-              <MenuItem>
-                <Link to={"/multilevel-menu/level-2"}>Level 2</Link>
-              </MenuItem>
-
-              <MenuItem>
-                <Link to={"/multilevel-menu/level-2"}>Level 2</Link>
-              </MenuItem>
-
-              <MenuItem>
-                <Link to={"/multilevel-menu/level-2"}>Level 2</Link>
-              </MenuItem>
-            </SidebarNestedMenu>
-
-            <MenuItem>
-              <Link to={"/multilevel-menu/level-1"}>Level 1</Link>
-            </MenuItem>
-
-            <MenuItem>
-              <Link to={"/multilevel-menu/level-1"}>Level 1</Link>
-            </MenuItem>
-
-          </SidebarNestedMenu>
-        </SidebarMenuSection>
       </SidebarMenu>
         <SidebarFooter>
             <SidebarFooterMenuItem title={'Settings'} />
