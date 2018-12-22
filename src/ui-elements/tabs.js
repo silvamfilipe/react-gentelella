@@ -63,11 +63,32 @@ class Tabs extends Component {
     const { right, vertical } = this.props;
     const prefix = vertical ? ' tabs-': '';
     const rightClass = right ? prefix + 'right' : prefix+'left';
-    console.log(rightClass);
+    if (vertical) {
+      const tabList = (
+        <div className="col-xs-3">
+          <ul className={'nav nav-tabs' + rightClass} role="tablist">
+            {tabsJSX}
+          </ul>
+        </div>
+      );
+      return (
+        <Fragment>
+          { !right ? tabList : '' }
+          <div className="col-xs-9">
+            <div className="tab-content">
+              {tabsContentJSX}
+            </div>
+          </div>
+          { right ? tabList : '' }
+          <div className="clearfix"/>
+        </Fragment>
+      );
+    }
+
     return (
       <Fragment>
         <div className="" role="tabpanel" data-example-id="togglable-tabs">
-          <ul className={'nav nav-tabs bar_tabs' + rightClass} role="tablist">
+          <ul className={'nav nav-tabs bar_tabs ' + rightClass} role="tablist">
             {tabsJSX}
           </ul>
           <div className="tab-content">
