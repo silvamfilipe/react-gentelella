@@ -3,6 +3,7 @@ import { Page, PageTitle, Notification } from 'react-gentelella';
 import GlobalSearch from "../app/global-search";
 import LeftTabs from './general-elements/left-tabs'
 import RightTabs from './general-elements/right-tabs'
+import VerticalTabsLeft from "./general-elements/vertical-tabs-left";
 
 const GeneralElements = () => (
     <Page>
@@ -17,6 +18,10 @@ const GeneralElements = () => (
           <div className="col-md-6 col-sm-6 col-xs-12">
             <RightTabs/>
           </div>
+          <div className="clearfix"/>
+            <div className="col-md-6 col-sm-6 col-xs-12">
+                <VerticalTabsLeft/>
+            </div>
         </div>
     </Page>
 );

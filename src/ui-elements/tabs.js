@@ -60,8 +60,10 @@ class Tabs extends Component {
       }
     }
 
-    const { right } = this.props;
-    const rightClass = right ? ' right' : '';
+    const { right, vertical } = this.props;
+    const prefix = vertical ? ' tabs-': '';
+    const rightClass = right ? prefix + 'right' : prefix+'left';
+    console.log(rightClass);
     return (
       <Fragment>
         <div className="" role="tabpanel" data-example-id="togglable-tabs">
@@ -82,11 +84,13 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-  right: PropTypes.bool.isRequired
+  right: PropTypes.bool.isRequired,
+  vertical: PropTypes.bool.isRequired
 };
 
 Tabs.defaultProps = {
-  right: false
+  right: false,
+  vertical: false
 };
 
 const hash = () => Date.now().toString()+Math.random().toString().replace('.','');
