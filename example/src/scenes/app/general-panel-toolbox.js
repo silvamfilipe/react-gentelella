@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { PanelToolbox, PanelToolboxItem, PanelToolboxDropdownItem } from "react-gentelella";
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
-const GeneralPanelToolbox = () => (
-    <PanelToolbox>
+class GeneralPanelToolbox extends Component {
+
+  handleCodeClick = e => {
+    const { onCodeClick } = this.props;
+    e.preventDefault();
+    onCodeClick();
+  }
+
+  render() {
+    return  (
+      <PanelToolbox>
         <PanelToolboxItem>
-            <a href="/" className="collapse-link"><i className="fa fa-chevron-up"/></a>
+          <OverlayTrigger placement="top" overlay={<Tooltip id="code-sample">Toggle code sample</Tooltip>}>
+          <a href="/" onClick={ this.handleCodeClick } className="collapse-link"><i className="fa fa-code"/></a>
+          </OverlayTrigger>
         </PanelToolboxItem>
 
-        <PanelToolboxDropdownItem icon={'wrench'}>
-            <PanelToolboxItem>
-                <a href="/">Settings 1</a>
-            </PanelToolboxItem>
-            <PanelToolboxItem>
-                <a href="/">Settings 2</a>
-            </PanelToolboxItem>
+        <PanelToolboxDropdownItem icon={'pencil'}>
+          <PanelToolboxItem>
+            <a href="/">Settings 1</a>
+          </PanelToolboxItem>
+          <PanelToolboxItem>
+            <a href="/">Settings 2</a>
+          </PanelToolboxItem>
         </PanelToolboxDropdownItem>
 
         <PanelToolboxItem>
-            <a href="/" className="close-link"><i className="fa fa-close"/></a>
+          <a href="/" className="close-link"><i className="fa fa-close"/></a>
         </PanelToolboxItem>
 
-    </PanelToolbox>
-);
+      </PanelToolbox>
+    );
+  }
+}
+
+GeneralPanelToolbox.propTypes = {
+  onCodeClick: PropTypes.func.isRequired
+};
+
+GeneralPanelToolbox.defaultProps = {
+  onCodeClick: () => {}
+}
 
 export default GeneralPanelToolbox;
