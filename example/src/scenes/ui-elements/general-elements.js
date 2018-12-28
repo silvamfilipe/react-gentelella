@@ -9,6 +9,7 @@ import AccordionBox from './general-elements/accordion-box'
 import Popovers from './general-elements/popovers'
 import Tooltips from './general-elements/tooltips'
 import Jumbotron from './general-elements/jumbotron'
+import Modals from './general-elements/modals'
 import { Clearfix } from 'react-bootstrap'
 
 const GeneralElements = () => (
@@ -49,7 +50,7 @@ const GeneralElements = () => (
         <div className="clearfix"/>
       </div>
       <div className="col-md-6 col-sm-6 col-xs-12">
-
+          <Modals/>
       </div>
       <div className="col-md-6 col-sm-6 col-xs-12">
         <Jumbotron/>
