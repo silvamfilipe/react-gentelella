@@ -42,7 +42,7 @@ class Popovers extends Component {
         <Highlight language="javascript">
           {
             "import React from 'react';\n" +
-            "import {  OverlayTrigger, Popover, Button } from 'react-gentelella';\n" +
+            "import { OverlayTrigger, Popover, Button } from 'react-bootstrap';\n" +
             "\n" +
             "const popoverRight = (\n" +
             "  <Popover id=\"popover-positioned-right\" title=\"Popover right\">\n" +

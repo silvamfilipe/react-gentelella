@@ -19,7 +19,43 @@ class Modals extends Component {
       <CodeSample open={showCode}>
         <Highlight language="javascript">
           {
-            ""
+            "import React, { Component } from 'react';\n" +
+            "import { Modal, Button } from 'react-bootstrap';\n" +
+            "\n" +
+            "class ModalExample extends Component {\n" +
+            "\n" +
+            "  state = {\n" +
+            "    show: false\n" +
+            "  };\n" +
+            "\n" +
+            "  handleClose = () => this.setState({ show: false });\n" +
+            "\n" +
+            "  openModal = () => this.setState({show: true});\n" +
+            "\n" +
+            "  render() {\n" +
+            "    return (\n" +
+            "      <div>\n" +
+            "        <Button onClick={ this.openModal } bsStyle=\"primary\">Open modal</Button>\n" +
+            "      \n" +
+            "        <Modal show={ this.state.show } onHide={ this.handleClose }>\n" +
+            "          <Modal.Header closeButton>\n" +
+            "            <Modal.Title>Modal title</Modal.Title>\n" +
+            "          </Modal.Header>\n" +
+            "          <Modal.Body>\n" +
+            "            <h4>Text in a modal</h4>\n" +
+            "            <p>Some content...</p>\n" +
+            "          </Modal.Body>  \n" +
+            "          <Modal.Footer>\n" +
+            "            <Button onClick={ this.handleClose }>Close</Button>\n" +
+            "          </Modal.Footer>\n" +
+            "        </Modal>\n" +
+            "        \n" +
+            "      </div>\n" +
+            "    );\n" +
+            "  }\n" +
+            "}\n" +
+            "\n" +
+            "export default ModalExample;\n"
           }
         </Highlight>
       </CodeSample>

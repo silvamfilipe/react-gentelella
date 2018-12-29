@@ -18,7 +18,7 @@ class Tooltips extends Component {
         <Highlight language="javascript">
           {
             "import React from 'react';\n" +
-            "import {  OverlayTrigger, Tooltip, Button } from 'react-gentelella';\n" +
+            "import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';\n" +
             "\n" +
             "const TooltipExample = () => (\n" +
             "  <OverlayTrigger placement=\"top\" overlay={<Tooltip id=\"top-tooltip\">Tooltip top</Tooltip>}>\n" +
