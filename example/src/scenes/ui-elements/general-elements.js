@@ -12,6 +12,7 @@ import Jumbotron from './general-elements/jumbotron';
 import Modals from './general-elements/modals';
 import Dropdowns from './general-elements/dropdowns';
 import Notifications from './general-elements/notifications';
+import Alerts from './general-elements/alerts';
 import { Clearfix } from 'react-bootstrap';
 
 const GeneralElements = () => (
@@ -60,7 +61,7 @@ const GeneralElements = () => (
       </div>
       <Clearfix/>
       <div className="col-md-6 col-sm-6 col-xs-12">
-
+        <Alerts/>
       </div>
       <div className="col-md-6 col-sm-6 col-xs-12">
         <Notifications/>

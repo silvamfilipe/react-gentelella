@@ -12,7 +12,7 @@ const App = () => (
     <div>
         <BaseTheme/>
           <Router>
-              <Gentelella fixedFooter={ false } fixedSidebar={ true } >
+              <Gentelella fixedFooter={ true } fixedSidebar={ true } >
                   <Sidebar/>
                   <HeadNav/>
 
