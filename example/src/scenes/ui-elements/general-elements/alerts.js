@@ -73,7 +73,7 @@ class Alerts extends Component {
     if (!this.state.error) return '';
 
     return (
-      <Alert bsStyle="error" onDismiss={() => this.setState({error: false})}>
+      <Alert bsStyle="danger" onDismiss={() => this.setState({error: false})}>
         <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
       </Alert>
     );

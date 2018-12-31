@@ -14,6 +14,7 @@ import Dropdowns from './general-elements/dropdowns';
 import Notifications from './general-elements/notifications';
 import Alerts from './general-elements/alerts';
 import { Clearfix } from 'react-bootstrap';
+import ProgressBars from './general-elements/progress-bars'
 
 const GeneralElements = () => (
   <Page>
@@ -65,6 +66,13 @@ const GeneralElements = () => (
       </div>
       <div className="col-md-6 col-sm-6 col-xs-12">
         <Notifications/>
+      </div>
+      <Clearfix/>
+      <div className="col-md-6 col-sm-6 col-xs-12">
+        <ProgressBars/>
+      </div>
+      <div className="col-md-6 col-sm-6 col-xs-12">
+
       </div>
       <Clearfix/>
     </div>
