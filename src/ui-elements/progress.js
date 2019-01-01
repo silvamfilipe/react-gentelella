@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-require('./progess.css');
+require('./progress.css');
 
 const Progress = ({ vertical, placement, type, now, striped, children, wide, active }) => {
   const progressBarClass = striped
