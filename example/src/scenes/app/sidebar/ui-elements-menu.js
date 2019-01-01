@@ -7,6 +7,9 @@ const UiElements = () => (
         <MenuItem>
             <Link to={"/ui-elements/general-elements"}>General Elements</Link>
         </MenuItem>
+        <MenuItem>
+          <Link to={"/ui-elements/typography"}>Typography</Link>
+        </MenuItem>
     </SidebarNestedMenu>
 );
 
