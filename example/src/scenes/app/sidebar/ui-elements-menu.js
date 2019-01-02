@@ -10,6 +10,12 @@ const UiElements = () => (
         <MenuItem>
           <Link to={"/ui-elements/typography"}>Typography</Link>
         </MenuItem>
+        <MenuItem>
+          <Link to={"/ui-elements/icons"}>Icons</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to={"/ui-elements/glyphicons"}>Glyphicons</Link>
+        </MenuItem>
     </SidebarNestedMenu>
 );
 
