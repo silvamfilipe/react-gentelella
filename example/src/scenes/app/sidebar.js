@@ -6,6 +6,7 @@ import {
 import MultilevelMenu from "./sidebar/multilevel-menu";
 import ExtrasMenu from "./sidebar/extras-menu";
 import UiElements from "./sidebar/ui-elements-menu";
+import FormsMenu from './sidebar/forms-menu'
 
 const elem = document.documentElement;
 
@@ -27,6 +28,7 @@ const Sidebar = () => (
         <ProfileQuickInfo name="Jane Doe" picture='https://randomuser.me/api/portraits/women/44.jpg' />
       <SidebarMenu>
           <SidebarMenuSection title={"General"}>
+              <FormsMenu/>
               <UiElements/>
           </SidebarMenuSection>
 

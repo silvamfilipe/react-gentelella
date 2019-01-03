@@ -10,6 +10,7 @@ import GeneralElements from "./ui-elements/general-elements";
 import Typography from './ui-elements/typography'
 import Icons from './ui-elements/icons'
 import Glyphicons from './ui-elements/glyphicons'
+import FormElements from './forms/form-elements'
 
 const App = () => (
     <div>
@@ -21,6 +22,7 @@ const App = () => (
 
                   <Switch>
                     <Route path="/extras/plain-page" component={ PlainPage }/>
+                    <Route path="/forms/general-form" component={ FormElements }/>
                     <Route path="/ui-elements/general-elements" component={ GeneralElements }/>
                     <Route path="/ui-elements/typography" component={ Typography }/>
                     <Route path="/ui-elements/icons" component={ Icons }/>

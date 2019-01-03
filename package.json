@@ -34,7 +34,9 @@
   "peerDependencies": {
     "pnotify": "^3",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "formik": "^1.4.1",
+    "react-bootstrap": "^0.32.4"
   },
   "dependencies": {
     "@babel/core": "^7.2.0",
@@ -53,6 +55,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
+    "formik": "^1.4.1",
     "gh-pages": "^2.0.1",
     "pnotify": "^3",
     "react": "^16.6.3",
