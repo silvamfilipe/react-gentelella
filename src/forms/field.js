@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Field = props => {
-  const { type, name, values, label, required} = props;
+  const { type, name, label, required, formProps} = props;
   const requiredTag = required ? <span className="required">*</span> : '';
-  const value = values.hasOwnProperty(name) ? values[name] : '';
 
   return (
     <div className="form-group">
@@ -17,24 +16,63 @@ const Field = props => {
           name={ name }
           required={required}
           className="form-control col-md-7 col-xs-12"
-          value={value}
-          { ...props }
+          { ...prepareProps(props) }
         />
       </div>
     </div>
   );
 };
 
+export const prepareProps = props => {
+  const { formProps } = props;
+  const cleanProps = { ...props };
+  delete cleanProps.formProps;
+  addHandlers(formProps, cleanProps);
+  addValue(formProps, cleanProps);
+  console.log(cleanProps);
+  return cleanProps;
+};
+
+const addHandlers = (formProps, props) => {
+  const property = ['onBlur', 'onChange'];
+  const handlers = ['handleBlur', 'handleChange'];
+  let handler;
+
+  for (let i = 0; i < handlers.length; i++) {
+    handler = props.hasOwnProperty(property[i])
+      ? props[property[i]]
+      : formProps.hasOwnProperty(handlers[i])
+          ? formProps[handlers[i]]
+          : null;
+
+    if (handler) props[property[i]] = handler;
+  }
+};
+
+const addValue = (formProps, props) => {
+  if (!formProps.values && props.hasOwnProperty('value')) return;
+
+  const name = props.name;
+
+  props.value = '';
+  if (formProps.values.hasOwnProperty(name)) {
+    props.value = formProps.values[name];
+  }
+};
+
 Field.propTypes = {
   type: PropTypes.oneOf(['text', 'email', 'password']).isRequired,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  required: PropTypes.bool.isRequired
+  label: PropTypes.string,
+  required: PropTypes.bool.isRequired,
+  formProps: PropTypes.object
 };
 
 Field.defaultProps = {
   type: 'text',
-  required: false
+  required: false,
+  formProps: null,
+  label: ''
 };
 
 export default Field;

@@ -1,28 +1,13 @@
-import React, { Component } from 'react';
-import { Formik } from 'formik';
+import React from 'react';
 
-import { loadChildren, renderChild } from './form-utils'
+const HorizontalForm = props => {
+  const { children } = props;
 
-class HorizontalForm extends Component {
-  render () {
-    const children = loadChildren(this.props.children);
-
-    return (
-      <Formik
-        render={ props => {
-          const rendered = [];
-          for (let key in children) {
-            rendered.push(renderChild(props, children[key]));
-          }
-          return (
-            <form className="form-horizontal form-label-left" onSubmit={ props.handleSubmit }>
-              { rendered }
-            </form>
-          )
-        } }
-      />
-    );
-  }
-}
+  return (
+    <form className="form-horizontal form-label-left" { ...props }>
+      { children }
+    </form>
+  )
+};
 
 export default HorizontalForm;

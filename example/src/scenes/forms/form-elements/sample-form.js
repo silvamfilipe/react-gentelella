@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Formik } from 'formik';
 import { Panel, PanelBody, PanelHeader, Form, Field } from 'react-gentelella';
 import GeneralPanelToolbox from '../../app/general-panel-toolbox'
 
@@ -11,10 +12,18 @@ class SampleForm extends Component {
           <GeneralPanelToolbox onCodeClick={ () => this.setState({showCode: !this.state.showCode})}/>
         </PanelHeader>
         <PanelBody>
-          <Form initialValues={ {firstName: null} }>
-            <Field name="firstName" label="First Name" required />
-            <Field name="lastName" label="last Name" required />
-          </Form>
+          <Formik
+            onSubmit={ values => {
+              console.log(values)}
+            }
+            render={
+            props => (
+              <Form onSubmit={ props.handleSubmit }>
+                <Field name="firstName" label="First Name" required formProps={ props } />
+              </Form>
+            )
+          } />
+
         </PanelBody>
       </Panel>
     );
