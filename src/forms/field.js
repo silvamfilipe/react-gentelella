@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Field = props => {
-  const { type, name, label, required, formProps} = props;
+  const { type, name, label, required} = props;
   const requiredTag = required ? <span className="required">*</span> : '';
 
   return (
@@ -25,11 +25,11 @@ const Field = props => {
 
 export const prepareProps = props => {
   const { formProps } = props;
+  console.log(formProps);
   const cleanProps = { ...props };
   delete cleanProps.formProps;
   addHandlers(formProps, cleanProps);
   addValue(formProps, cleanProps);
-  console.log(cleanProps);
   return cleanProps;
 };
 
@@ -51,6 +51,8 @@ const addHandlers = (formProps, props) => {
 
 const addValue = (formProps, props) => {
   if (!formProps.values && props.hasOwnProperty('value')) return;
+
+  if (!formProps.values) return;
 
   const name = props.name;
 
