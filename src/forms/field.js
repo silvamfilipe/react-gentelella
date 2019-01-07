@@ -61,7 +61,7 @@ const addValue = (formProps, props) => {
 };
 
 Field.propTypes = {
-  type: PropTypes.oneOf(['text', 'email', 'password']).isRequired,
+  type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
   required: PropTypes.bool.isRequired,
