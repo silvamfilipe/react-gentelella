@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormGroup, HelpBlock } from 'react-bootstrap';
 
 const Field = props => {
   const { type, name, label, required} = props;
   const requiredTag = required ? <span className="required">*</span> : '';
+  const touched = retrieveValue('touched', props);
+  const error = retrieveValue('error', props);
+  const isInvalid = touched && error;
+  const validationState = isInvalid ? 'error' : null;
+  const inputClass = isInvalid ? 'form-control col-md-7 col-xs-12 parsley-error' : 'form-control col-md-7 col-xs-12';
 
   return (
-    <div className="form-group">
+    <FormGroup validationState={ validationState }>
       <label className="control-label col-md-3 col-sm-3 col-xs-12" htmlFor={ name }>{ label } { requiredTag }
       </label>
       <div className="col-md-6 col-sm-6 col-xs-12">
@@ -15,22 +21,54 @@ const Field = props => {
           id={ name }
           name={ name }
           required={required}
-          className="form-control col-md-7 col-xs-12"
+          className={inputClass}
           { ...prepareProps(props) }
         />
+        { isInvalid
+          ? <HelpBlock>{ error }</HelpBlock>
+          : ''
+        }
       </div>
-    </div>
+    </FormGroup>
   );
 };
 
 export const prepareProps = props => {
   const { formProps } = props;
-  console.log(formProps);
   const cleanProps = { ...props };
   delete cleanProps.formProps;
   addHandlers(formProps, cleanProps);
   addValue(formProps, cleanProps);
   return cleanProps;
+};
+
+export const retrieveValue = (property, props) => {
+  const propNames = ['value', 'error', 'touched'];
+  const formPropNames = ['values', 'errors', 'touched'];
+  let results = [];
+
+  const { formProps, name } = props;
+
+  for (let i=0; i<propNames.length; i++) {
+    if (props.hasOwnProperty(propNames[i])) {
+      results[propNames[i]] = props[propNames[i]];
+      continue;
+    }
+
+    if (
+      formProps &&
+      formProps.hasOwnProperty(formPropNames[i]) &&
+      formProps[formPropNames[i]].hasOwnProperty(name)
+    ) {
+      results[propNames[i]] = formProps[formPropNames[i]][name];
+      continue;
+    }
+
+    results[propNames[i]] = null;
+  }
+
+  return results[property];
+
 };
 
 const addHandlers = (formProps, props) => {

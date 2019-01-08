@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormGroup, HelpBlock } from 'react-bootstrap';
 
 import ToggleButtonOption from "./toggle-button-option";
+import { retrieveValue } from './field';
 
 class ToggleButtonGroup extends Component {
 
@@ -28,7 +30,7 @@ class ToggleButtonGroup extends Component {
       if (children.hasOwnProperty(childKey)) {
         const { props } = children[childKey];
         const key = hash();
-        childOptions[key] = {key: key, ...props, onChange: this.handleOptionChange, name }
+        childOptions[key] = {key: key, ...props, onChange: this.handleOptionChange, onBlur: this.handleOptionBlur, name }
       }
     }
 
@@ -57,6 +59,11 @@ class ToggleButtonGroup extends Component {
     this.setState({ value, childOptions });
   };
 
+  handleOptionBlur = e => {
+    const { handleBlur } = this.props.formProps;
+    if (handleBlur) { handleBlur(e); }
+  };
+
   componentWillReceiveProps(nextProps, nextContext) {
     const value = this.retrieveValue(nextProps);
     if (value === this.state.value) return;
@@ -80,15 +87,29 @@ class ToggleButtonGroup extends Component {
   render() {
     const { name, label, required } = this.props;
     const requiredTag = required ? <span className="required">*</span> : '';
+    const touched = retrieveValue('touched', this.props);
+    const error = retrieveValue('error', this.props);
+    const isInvalid = touched && error;
+    const validationState = isInvalid ? 'error' : null;
+
     return (
-      <div className="form-group">
+      <FormGroup validationState={ validationState }>
         <label htmlFor={name} className="control-label col-md-3 col-sm-3 col-xs-12">{ label } {requiredTag}</label>
         <div className="col-md-6 col-sm-6 col-xs-12">
           <div className="btn-group" data-toggle="buttons">
             { this.renderChildOptions() }
           </div>
         </div>
-      </div>
+
+        { isInvalid
+          ? <div className="row">
+            <div className="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+              <HelpBlock>{ error }</HelpBlock>
+            </div>
+          </div>
+          : ''
+        }
+      </FormGroup>
     );
   }
 }
