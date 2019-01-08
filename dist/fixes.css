@@ -1,3 +1,19 @@
 blockquote footer{
     position: inherit !important;
 }
+
+.form-group.has-feedback label span {
+    display: inline !important;
+}
+
+.form-control-feedback.left {
+    left: 1px !important;
+}
+
+.form-control-feedback.right {
+    right: 1px !important;
+}
+
+span.required {
+    color: red;
+}

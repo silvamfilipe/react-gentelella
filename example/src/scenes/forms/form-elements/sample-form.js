@@ -74,13 +74,14 @@ class SampleForm extends Component {
             "    render={\n" +
             "      props => (\n" +
             "        <Form onSubmit={ props.handleSubmit }>\n" +
-            "          <Field name=\"firstName\" label=\"First Name\" required formProps={ props } />\n" +
-            "          <Field name=\"lastName\" label=\"Last Name\" formProps={ props } />\n" +
+            "          <Field name=\"firstName\" label=\"First Name\" layout=\"centered\" required formProps={ props } />\n" +
+            "          <Field name=\"lastName\" label=\"Last Name\" layout=\"centered\" formProps={ props } />\n" +
             "          <ToggleButtonGroup required name=\"gender\" label=\"Gender\" formProps={ props }>\n" +
             "            <ToggleButtonOption activeStyle={\"primary\"} value=\"male\"> &nbsp; Male &nbsp; </ToggleButtonOption>\n" +
             "            <ToggleButtonOption activeStyle={\"primary\"} value=\"female\">Female</ToggleButtonOption>\n" +
             "          </ToggleButtonGroup>\n" +
             "          <hr/>\n" +
+            "          <Button type=\"submit\" bsStyle=\"success\" disabled={!props.isValid}>Submit</Button>" +
             "          <Button onClick={ props.handleReset } type=\"reset\" bsStyle=\"primary\">Reset</Button>\n" +
             "        </Form>\n" +
             "      )\n" +
@@ -113,14 +114,14 @@ class SampleForm extends Component {
             render={
             props => (
               <Form onSubmit={ props.handleSubmit }>
-                <Field name="firstName" label="First Name" required formProps={ props } />
-                <Field name="lastName" label="Last Name" required formProps={ props } />
-                <Field name="middleName" label="Middle Name / Initial" formProps={ props } />
+                <Field name="firstName" label="First Name" layout="centered" required formProps={ props } />
+                <Field name="lastName" label="Last Name" layout="centered" required formProps={ props } />
+                <Field name="middleName" label="Middle Name / Initial" layout="centered" formProps={ props } />
                 <ToggleButtonGroup required name="gender" label="Gender" formProps={ props }>
                   <ToggleButtonOption activeStyle={"primary"} value="male"> &nbsp; Male &nbsp; </ToggleButtonOption>
                   <ToggleButtonOption activeStyle={"primary"} value="female">Female</ToggleButtonOption>
                 </ToggleButtonGroup>
-                <Field name="dateOfBirth" label="DateOfBirth" required formProps={ props } />
+                <Field name="dateOfBirth" label="DateOfBirth" layout="centered" required formProps={ props } />
                 <hr/>
                 <FormGroup>
                   <Grid>
