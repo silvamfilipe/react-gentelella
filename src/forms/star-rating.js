@@ -12,6 +12,8 @@ class StarRating extends Component {
   }
 
   onStarClick = value => {
+    const { onChange } = this.props;
+    if (onChange) onChange(value);
     this.handleOptionChange(value);
     this.setState({value});
   }
