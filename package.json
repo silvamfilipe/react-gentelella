@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/silvamfilipe/react-gentelella/blob/master/README.md",
   "peerDependencies": {
+    "formik": "^1.4.1",
     "pnotify": "^3",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0",
-    "formik": "^1.4.1",
-    "react-bootstrap": "^0.32.4"
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "@babel/core": "^7.2.0",
@@ -62,6 +62,7 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.1",
+    "react-star-rating-component": "^1.4.1",
     "react-transition-group": "^2.5.1",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.1.0",

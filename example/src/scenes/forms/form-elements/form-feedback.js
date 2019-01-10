@@ -44,7 +44,7 @@ class FormFeedback extends Component {
             "    <Field name=\"disabled\" disabled label=\"Disabled\" placeholder=\"Disabled\" />\n" +
             "    <Field name=\"readOnlyt\" readOnly label=\"Read Only\" placeholder=\"Read Only\" />\n" +
             "    <hr/>\n" +
-            "    <Button onClick={ props.handleReset } type=\"reset\" bsStyle=\"primary\">Reset</Button>\n" +
+            "    <Button type=\"reset\" bsStyle=\"primary\">Reset</Button>\n" +
             "    <Button type=\"submit\" bsStyle=\"success\">Submit</Button>\n" +
             "  </Form>\n" +
             ");\n" +

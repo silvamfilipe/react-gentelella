@@ -17,3 +17,19 @@ blockquote footer{
 span.required {
     color: red;
 }
+
+span.star-stack {
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+i.fa.half-a-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dv-star-rating {
+    padding-top: 4px;
+}

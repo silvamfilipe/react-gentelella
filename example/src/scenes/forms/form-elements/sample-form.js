@@ -121,7 +121,7 @@ class SampleForm extends Component {
                   <ToggleButtonOption activeStyle={"primary"} value="male"> &nbsp; Male &nbsp; </ToggleButtonOption>
                   <ToggleButtonOption activeStyle={"primary"} value="female">Female</ToggleButtonOption>
                 </ToggleButtonGroup>
-                <Field name="dateOfBirth" label="DateOfBirth" layout="centered" required formProps={ props } />
+                <Field name="dateOfBirth" label="Date Of Birth" layout="centered" required formProps={ props } />
                 <hr/>
                 <FormGroup>
                   <Grid>

@@ -27,7 +27,7 @@ ToggleButtonOption.propTypes = {
   onBlur: PropTypes.func.isRequired,
   checked: PropTypes.bool.isRequired,
   bsStyle: PropTypes.oneOf(['default', 'info', 'danger', 'success', 'primary']).isRequired,
-  activeStyle: PropTypes.oneOf(['default', 'info', 'danger', 'success', 'primary']).isRequired,
+  activeStyle: PropTypes.oneOf(['default', 'info', 'danger', 'success', 'primary', 'warning']).isRequired,
 };
 
 ToggleButtonOption.defaultProps = {
