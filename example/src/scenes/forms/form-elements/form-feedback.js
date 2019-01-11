@@ -67,7 +67,7 @@ class FormFeedback extends Component {
           { this.renderCodeSample() }
           <br/>
           <Formik
-            initialValues={ {firstName: '', lastName: '', dateOfBirth: '', email:'', phone:'', defaultInput: ''} }
+            initialValues={ {firstName1: '', lastName1: '', dateOfBirth1: '', email1:'', phone1:'', defaultInput1: ''} }
             onSubmit={ values => {
               console.log(values)
             }}
@@ -76,19 +76,19 @@ class FormFeedback extends Component {
                 <Grid>
                   <Row>
                     <Col md={6} sm={6} xs={12}>
-                      <Field name="firstName" formProps={ props } placeholder="First Name" feedback={<i className="fa fa-user left"/> }/>
-                      <Field name="email" formProps={ props } placeholder="Email" feedback={<i className="fa fa-envelope left"/> }/>
+                      <Field name="firstName1" formProps={ props } placeholder="First Name" feedback={<i className="fa fa-user left"/> }/>
+                      <Field name="email1" formProps={ props } placeholder="Email" feedback={<i className="fa fa-envelope left"/> }/>
                     </Col>
                     <Col md={6} sm={6} xs={12}>
-                      <Field name="lastName" formProps={ props } placeholder="Last Name" feedbackPosition="right" feedback={<i className="fa fa-user right"/> }/>
-                      <Field name="phone" formProps={ props } placeholder="Phone" feedbackPosition="right" feedback={<i className="fa fa-phone right"/> }/>
+                      <Field name="lastName1" formProps={ props } placeholder="Last Name" feedbackPosition="right" feedback={<i className="fa fa-user right"/> }/>
+                      <Field name="phone1" formProps={ props } placeholder="Phone" feedbackPosition="right" feedback={<i className="fa fa-phone right"/> }/>
                     </Col>
                   </Row>
                   <Row>
-                    <Field name="defaultInput" formProps={ props } label="Default Input" placeholder="Default Input" />
-                    <Field name="disabledInput" formProps={ props } disabled label="Disabled Input" placeholder="Disabled Input" />
-                    <Field name="readOnlyInput" formProps={ props } readOnly label="Read Only Input" placeholder="Read Only Input" />
-                    <Field name="dateOfBirth" label="Date Of Birth" required formProps={ props } />
+                    <Field name="defaultInput1" formProps={ props } label="Default Input" placeholder="Default Input" />
+                    <Field name="disabledInput1" formProps={ props } disabled label="Disabled Input" placeholder="Disabled Input" />
+                    <Field name="readOnlyInput1" formProps={ props } readOnly label="Read Only Input" placeholder="Read Only Input" />
+                    <Field name="dateOfBirth1" label="Date Of Birth" required formProps={ props } />
                   </Row>
                 </Grid>
                 <hr />

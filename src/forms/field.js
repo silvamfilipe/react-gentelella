@@ -9,7 +9,7 @@ const Field = props => {
   const error = retrieveValue('error', props);
   const isInvalid = touched && error;
   const validationState = isInvalid ? 'error' : null;
-  const inputClass = isInvalid ? 'form-control col-md-7 col-xs-12 parsley-error' : 'form-control col-md-7 col-xs-12';
+  const inputClass = isInvalid ? 'form-control parsley-error' : 'form-control';
   const feedBackRender = feedback ? (
     <FormControl.Feedback>
       { feedback }
