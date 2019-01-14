@@ -1,80 +1,89 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group'
-import {NESTED_MENU_CLICK} from "./menu-actions";
+import { CSSTransition } from 'react-transition-group';
 
 class SideBarNestedMenu extends Component {
 
-    constructor(props) {
-        super(props);
+    state = {
+        open: false
+    };
 
-        this.state = {
-            open: false,
-            className: ''
-        };
+    wrapperRef = null;
 
-        this.handleClick = this.handleClick.bind(this);
-        this.handleClickOther = this.handleClickOther.bind(this);
-    }
+    handleClick = () => {
+        this.setState({ open: !this.state.open });
+    };
 
-    handleClickOther(event) {
-        const { parent } = this.props;
-        if (event.detail === parent || event.detail === this) {
-            return;
+    setWrapperRef  = node => this.wrapperRef = node;
+
+    handleClickOutside = e => {
+        if (!this.state.open) return;
+
+        if (!document.body.className.match(/(nav-sm)/i)) return;
+
+        if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
+            this.setState({open: false});
         }
+    };
 
-        this.setState({ open: false, className: '' });
-    }
+    handleClickInSideMenu = e => {
+        if (!this.state.open) return;
 
-    componentWillMount()
-    {
-        document.addEventListener(NESTED_MENU_CLICK, this.handleClickOther, false);
+        if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
+            this.setState({open: false});
+        }
+    };
+
+    handleClickMenuItem = e => {
+        if (this.state.open && document.body.className.match(/(nav-sm)/i)) {
+            this.setState({open: false});
+        }
+    };
+
+    componentDidMount() {
+        document.getElementById('sidebar-menu').addEventListener('mousedown', this.handleClickInSideMenu);
+        document.addEventListener('mousedown', this.handleClickOutside);
+        document.addEventListener('onClickMenuItem', this.handleClickMenuItem);
     }
 
     componentWillUnmount() {
-        document.removeEventListener(NESTED_MENU_CLICK, this.handleClickOther, false)
+        document.getElementById('sidebar-menu').removeEventListener('mousedown', this.handleClickInSideMenu);
+        document.removeEventListener('onClickMenuItem', this.handleClickMenuItem);
     }
-
-    handleClick() {
-        const { parent } = this.props;
-        const event = new CustomEvent(NESTED_MENU_CLICK, { detail: parent ? parent : this });
-        document.dispatchEvent(event);
-        this.setState({ open: !this.state.open, className: 'active' });
-    }
-
 
     render() {
-        const { label, children, parent } = this.props;
-        const childrenWithParent = React.Children.map(children, child => {
-            return React.cloneElement(child, {
-                parent: parent ? parent : this
-            });
-        });
-        const component = this.state.open ? (
-            <ul className="nav child_menu">
-                { childrenWithParent }
-            </ul>
-        ) : '';
+        const {children, icon, label } = this.props;
+        const activeStateClass = this.state.open ? 'active' : '';
+        const iconElement = icon ? <i className={"fa fa-" +  icon}/> : '';
 
-        return (
-            <li className={ this.state.className }>
+        return(
+
+            <li ref={ this.setWrapperRef } className={ activeStateClass }>
                 <a onClick={ this.handleClick }>
-                    { label }
+                    { iconElement } { label }&nbsp; <span className="fa fa-chevron-down"/>
                 </a>
-                <CSSTransitionGroup
-                    transitionName="slide"
-                    transitionEnterTimeout={700}
-                    transitionLeaveTimeout={0}
+                <CSSTransition
+                    in={this.state.open}
+                    classNames="slide"
+                    timeout={700}
                 >
-                    { component }
-                </CSSTransitionGroup>
+                    <ul className="nav child_menu">
+                        { children }
+                    </ul>
+                </CSSTransition>
             </li>
+
         );
     }
 }
 
 SideBarNestedMenu.propTypes = {
-    label: PropTypes.any.isRequired
+    icon: PropTypes.string,
+    label: PropTypes.string.isRequired
+};
+
+SideBarNestedMenu.defaultProps = {
+    icon: null
 };
 
 export default SideBarNestedMenu;

@@ -9,7 +9,7 @@ import 'pnotify/dist/pnotify.mobile.css';
 import 'pnotify/dist/pnotify.nonblock.css';
 
 import PNotify from 'pnotify';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const isReady = () => typeof window !== 'undefined';
@@ -76,10 +76,10 @@ class Notification extends React.Component {
         if  (pnotifyOptions.animateOut) {
             delete pnotifyOptions.animateOut;
         }
-        const widget = new PNotify(pnotifyOptions);
         if (this.props.addClass !== '') {
-
+            pnotifyOptions.addclass = this.props.addClass;
         }
+        const widget = new PNotify(pnotifyOptions);
         this.setState({ widget });
     }
 
@@ -99,7 +99,7 @@ Notification.propTypes = {
     delay: PropTypes.number,
     shadow: PropTypes.bool,
     hide: PropTypes.bool,
-    nonblock: PropTypes.bool,
+    nonblock: PropTypes.any,
     desktop: PropTypes.bool,
     styling: PropTypes.any,
     icons: PropTypes.string,

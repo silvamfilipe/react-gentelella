@@ -1,30 +1,23 @@
-import _$ from 'jquery';
-import React, { Component } from 'react';
+import React from 'react';
+import PageContentProvider, { PageContentConsumer } from './page-content-provider';
 
-class TopNavigation extends Component {
+const TopNavigation = ({ children }) => (
+  <div className="top_nav">
+    <div className="nav_menu" style={{ minHeight: '57px' }}>
+      <nav>
+        <div className="nav toggle">
+            <PageContentProvider>
+            <PageContentConsumer>
+                {props => (
+                    <a onClick={ props.toggleNav } id="menu_toggle"><i className="fa fa-bars"/></a>
+                )}
+            </PageContentConsumer>
+            </PageContentProvider>
+        </div>
+        { children }
+      </nav>
+    </div>
+  </div>
+)
 
-    static handleMenuToggle() {
-        _$('body').toggleClass('nav-md nav-sm');
-    }
-
-    render() {
-        return (
-
-            <div className="top_nav">
-                <div className="nav_menu">
-                    <nav>
-                        <div className="nav toggle">
-                            <a onClick={TopNavigation.handleMenuToggle} id="menu_toggle"><i className="fa fa-bars" /></a>
-                        </div>
-                        <ul className="nav navbar-nav navbar-right">
-                            { this.props.children }
-
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        );
-    }
-}
-
-export default TopNavigation;
+export default  TopNavigation;
