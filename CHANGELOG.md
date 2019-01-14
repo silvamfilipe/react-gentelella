@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+[v0.6.0] 2019-01-14
+### Added
+- Tags input field component
+- Select input field component
+- Field input component
+- Form component (integration with Formik and Yup)
+- 5 start input component
+- Collapsible/Accordion component
+- Demo site with code samples 
+
+### Fixed
+- Sidebar and page layout behavior
+- Better Gentelella/Bootstrap CSS integration
+- Sidebar menu bugs
+
 [v0.5.1] 2018-09-20
 ### Fixed
 - Import statements for tabs 
