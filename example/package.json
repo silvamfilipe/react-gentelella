@@ -2,6 +2,7 @@
   "name": "react-gentelella-example",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://silvamfilipe.github.io/react-gentelella",
   "dependencies": {
     "formik": "^1.4.1",
     "prop-types": "^15.6.2",

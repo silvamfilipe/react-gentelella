@@ -7,7 +7,8 @@ This project applies the [semantic version 2.0.0](http://semver.org) specificati
 THIS PROJECT IS UNDER INITIAL DEVELOPMENT.
 DO NOT USE IT ON PRODUCTION PROJECTS.
 
-// Work in progress...
+#### DEMO
+You can check the demo site at [https://silvamfilipe.github.io/react-gentelella/](https://silvamfilipe.github.io/react-gentelella/)
 
 ## Change log
 
