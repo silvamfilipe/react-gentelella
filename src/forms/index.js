@@ -6,3 +6,4 @@ export { default as ToggleButtonOption } from './toggle-button-option';
 export { default as StarRating } from './star-rating';
 export { default as TextArea} from './text-area';
 export { default as Select} from './select';
+export { default as TagsField} from './tags-input';

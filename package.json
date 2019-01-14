@@ -36,7 +36,10 @@
     "pnotify": "^3",
     "react": "^15.0.0 || ^16.0.0",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-star-rating-component": "^1.4.1",
+    "react-tagsinput": "^3.19.0",
+    "react-input-autosize": "^2.2.1"
   },
   "dependencies": {
     "@babel/core": "^7.2.0",
@@ -61,8 +64,10 @@
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
+    "react-input-autosize": "^2.2.1",
     "react-scripts": "^2.1.1",
     "react-star-rating-component": "^1.4.1",
+    "react-tagsinput": "^3.19.0",
     "react-transition-group": "^2.5.1",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.1.0",

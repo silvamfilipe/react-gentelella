@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { prepareProps, retrieveValue } from './field'
 import { FormGroup, HelpBlock } from 'react-bootstrap'
-import TextArea from './text-area'
 
 const Select = props => {
   const { name, label, required, layout, children } = props;
@@ -23,7 +22,9 @@ const Select = props => {
       ? ''
       : 'col-md-9 col-sm-9 col-xs-12';
 
+  const selectProps = prepareProps(props);
   return (
+
     <FormGroup validationState={ validationState }>
       { labelRender }
       <div className={ label ? layoutClass : ''}>
@@ -32,7 +33,7 @@ const Select = props => {
           name={ name }
           required={ required }
           className={ inputClass }
-          { ...prepareProps(props) }
+          { ...selectProps }
         >
           { children }
         </select>
