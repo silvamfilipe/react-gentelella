@@ -19,7 +19,7 @@ class FormBasicElements extends Component {
           <Formik
             onSubmit={ values => console.log(values) }
             initialValues={{defaultInput: '', dateOfBirth3: '', password: 'passwordonetwo', customSelect3: '', select3: '',
-              selectGrouped3: '', selectMultiple3: []}}
+              selectGrouped3: '', selectMultiple3: [], tagsInput3: ['react', 'gentelella']}}
             render={props => (
               <Form onSubmit={ props.handleSubmit }>
                 <Field name="defaultInput3" label="Default Input" formProps={ props } placeholder="Default input" />

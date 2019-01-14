@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
-import TagsInput from 'react-tagsinput'
-import { prepareProps, retrieveValue } from './field'
+import TagsInput from 'react-tagsinput';
+import { retrieveValue } from './field'
 import { FormGroup, HelpBlock } from 'react-bootstrap';
 import AutosizeInput from 'react-input-autosize';
 
 class TagsField extends Component {
 
-  state = {tags: []}
+  constructor(props) {
+    super(props);
+    this.state = {tags: this.retrieveTags(props)};
+  }
 
-  handleChange = tags => ( this.setState({tags}));
+  retrieveTags = props => {
+    if (props.value) {
+      return props.value;
+    }
+
+    const {name, formProps} = props;
+    if (formProps && formProps.values[name]) {
+      return formProps.values[name];
+    }
+
+    return [];
+  };
+
+  handleChange = tags => {
+    const {name, formProps} = this.props;
+    if (formProps && formProps.setFieldValue) {
+      formProps.setFieldValue(name, tags);
+    }
+    this.setState({tags})
+  };
 
   render() {
     const { name, label, required, layout} = this.props;
@@ -17,7 +39,6 @@ class TagsField extends Component {
     const error = retrieveValue('error', this.props);
     const isInvalid = touched && error;
     const validationState = isInvalid ? 'error' : null;
-    const inputClass = isInvalid ? 'form-control parsley-error' : 'form-control';
 
     const labelRender = label
       ? (<label className="control-label col-md-3 col-sm-3 col-xs-12" htmlFor={ name }>{ label } { requiredTag }</label>)
@@ -30,7 +51,7 @@ class TagsField extends Component {
         : 'col-md-9 col-sm-9 col-xs-12';
 
     function autoSizingRenderInput ({addTag, ...props}) {
-      let {onChange, value, ...other} = props
+      let {onChange, value, ...other} = props;
       return (
         <AutosizeInput type='text' onChange={onChange} value={value} {...other} />
       )
