@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, PanelHeader, PanelBody, Form, Field, TextArea, Select, TagsField } from 'react-gentelella';
+import { Panel, PanelHeader, PanelBody, Form, Field, TextArea, Select, TagsField, Checkbox } from 'react-gentelella';
 import { Formik } from 'formik';
 import { Button, Col, FormGroup, Grid, Row } from 'react-bootstrap';
 
@@ -139,6 +139,17 @@ class FormBasicElements extends Component {
                 </Select>
 
                 <TagsField name="tagsInput3" label="Tags input" formProps={ props } />
+
+                <FormGroup>
+                  <label className="col-md-3 col-sm-3 col-xs-12 control-label">
+                    Checkboxes and radios<br />
+                    <small className="text-navy">Normal Bootstrap elements</small>
+                  </label>
+                  <div className="col-md-9 col-sm-9 col-xs-12">
+                    <Checkbox name="opt13" value="one" label="Option one. Select more than one options" formProps={ props } />
+                    <Checkbox name="opt23" value="two" label="Option two. Select more than one options" formProps={ props } />
+                  </div>
+                </FormGroup>
 
                 <hr/>
                 <FormGroup>
