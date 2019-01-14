@@ -1,82 +1,118 @@
 import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
 
 class Tabs extends Component {
 
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        const {children} = props;
-        const defaultTabs = {};
-        for (let childKey in children) {
-            const {props} = children[childKey];
-            const key = hash();
-            defaultTabs[key] = {key: key, title: props.title, children: props.children, active: props.active}
-        }
-
-        this.state = {
-            tabs: defaultTabs
-        };
-
-        this.tabClickHandler = this.tabClickHandler.bind(this);
-        this.removeAllOtherActive = this.removeAllOtherActive.bind(this);
+    const {children} = props;
+    const defaultTabs = {};
+    for (let childKey in children) {
+      const {props} = children[childKey];
+      const key = hash();
+      defaultTabs[key] = {key: key, title: props.title, children: props.children, active: props.active}
     }
 
-    removeAllOtherActive() {
-        const {tabs} = this.state;
-        for (let tabKey in tabs) {
-            tabs[tabKey].active = false;
-        }
-        this.setState({tabs});
+    this.state = {
+      tabs: defaultTabs
     };
 
-    tabClickHandler(key) {
-        const {tabs} = this.state;
-        this.removeAllOtherActive();
-        tabs[key].active = true;
-        this.setState({tabs});
-    };
+    this.tabClickHandler = this.tabClickHandler.bind(this);
+    this.removeAllOtherActive = this.removeAllOtherActive.bind(this);
+  }
 
-    generateTabs() {
-        const {tabs} = this.state;
+  removeAllOtherActive() {
+    const {tabs} = this.state;
+    for (let tabKey in tabs) {
+      tabs[tabKey].active = false;
+    }
+    this.setState({tabs});
+  };
 
-        let tabsJSX = [];
-        let tabsContentJSX = [];
+  tabClickHandler(key) {
+    const {tabs} = this.state;
+    this.removeAllOtherActive();
+    tabs[key].active = true;
+    this.setState({tabs});
+  };
 
-        for (let tabKey in tabs) {
-            const tab = tabs[tabKey];
-            tabsJSX.push(
-                <li key={tab.key} style={!tab.active ? {cursor: 'pointer'} : null} role="presentation" className={tab.active ? "active" : null}>
-                    <a onClick={!tab.active ? () => this.tabClickHandler(tab.key) : null} key={tab.key + "-tab"} role="tab" data-toggle="tab">{tab.title}</a>
-                </li>
-            );
+  generateTabs() {
+    const {tabs} = this.state;
 
-            if (tab.active) {
-                tabsContentJSX.push(
-                    <div role="tabpanel" className="tab-pane fade active in" key={tab.key + "-content"} aria-labelledby={tab.key + "-tab"}>
-                        {tab.children}
-                    </div>
-                );
-            }
-        }
+    let tabsJSX = [];
+    let tabsContentJSX = [];
 
-        return (
-            <Fragment>
-                <div className="" role="tabpanel" data-example-id="togglable-tabs">
-                    <ul className="nav nav-tabs bar_tabs" role="tablist">
-                        {tabsJSX}
-                    </ul>
-                    <div className="tab-content">
-                        {tabsContentJSX}
-                    </div>
-                </div>
-            </Fragment>
+    for (let tabKey in tabs) {
+      const tab = tabs[tabKey];
+      tabsJSX.push(
+        <li key={tab.key} style={!tab.active ? {cursor: 'pointer'} : null} role="presentation" className={tab.active ? "active" : null}>
+          <a onClick={!tab.active ? () => this.tabClickHandler(tab.key) : null} key={tab.key + "-tab"} role="tab" data-toggle="tab">{tab.title}</a>
+        </li>
+      );
+
+      if (tab.active) {
+        tabsContentJSX.push(
+          <div role="tabpanel" className="tab-pane fade active in" key={tab.key + "-content"} aria-labelledby={tab.key + "-tab"}>
+            {tab.children}
+          </div>
         );
+      }
     }
 
-    render() {
-        return this.generateTabs();
+    const { right, vertical } = this.props;
+    const prefix = vertical ? ' tabs-': '';
+    const rightClass = right ? prefix + 'right' : prefix+'left';
+    if (vertical) {
+      const tabList = (
+        <div className="col-xs-3">
+          <ul className={'nav nav-tabs' + rightClass} role="tablist">
+            {tabsJSX}
+          </ul>
+        </div>
+      );
+      return (
+        <Fragment>
+          { !right ? tabList : '' }
+          <div className="col-xs-9">
+            <div className="tab-content">
+              {tabsContentJSX}
+            </div>
+          </div>
+          { right ? tabList : '' }
+          <div className="clearfix"/>
+        </Fragment>
+      );
     }
+
+    return (
+      <Fragment>
+        <div className="" role="tabpanel" data-example-id="togglable-tabs">
+          <ul className={'nav nav-tabs bar_tabs ' + rightClass} role="tablist">
+            {tabsJSX}
+          </ul>
+          <div className="tab-content">
+            {tabsContentJSX}
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
+
+  render() {
+    return this.generateTabs();
+  }
 }
+
+Tabs.propTypes = {
+  right: PropTypes.bool.isRequired,
+  vertical: PropTypes.bool.isRequired
+};
+
+Tabs.defaultProps = {
+  right: false,
+  vertical: false
+};
 
 const hash = () => Date.now().toString()+Math.random().toString().replace('.','');
 

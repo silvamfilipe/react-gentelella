@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
-
-    render() {
-       return (
-           <footer>
-               <div className="pull-right">
-                   {this.props.children}
-               </div>
-               <div className="clearfix"/>
-           </footer>
-       );
-    }
-}
+const Footer = ({ children }) => (
+    <footer id="footer">
+        <div className="pull-right">
+            { children }
+        </div>
+        <div className="clearfix"/>
+    </footer>
+);
 
 export default Footer;
+

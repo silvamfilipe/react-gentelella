@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
 
-class SideBarMenu extends Component {
+class SidebarMenu extends Component {
 
     render() {
-        return(
+        const { children } = this.props;
+        return (
             <div id="sidebar-menu" className="main_menu_side hidden-print main_menu">
                 <br />
-                { this.props.children }
+                { children }
             </div>
         );
     }
 }
 
-export default SideBarMenu;
+export default SidebarMenu;

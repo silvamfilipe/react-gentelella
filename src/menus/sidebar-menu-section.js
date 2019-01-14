@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class SideBarMenuSection extends Component {
+const SidebarMenuSection = ({ children, title }) => (
+  <div className="menu_section">
+    <h3>{ title }</h3>
+    <ul className="nav side-menu">
+      { children }
+    </ul>
+  </div>
+);
 
-    render() {
-        const { label, children } = this.props;
-        return (
-            <div className="menu_section">
-                <h3>{ label }</h3>
-                <ul className="nav side-menu">
-                    { children }
-                </ul>
-            </div>
-        );
-    }
-}
-
-SideBarMenuSection.propTypes = {
-    label: PropTypes.string.isRequired
+SidebarMenuSection.propTypes = {
+  title: PropTypes.string.isRequired
 };
 
-export default SideBarMenuSection;
+export default SidebarMenuSection;

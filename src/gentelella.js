@@ -1,42 +1,43 @@
-import _$ from 'jquery';
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import 'bootstrap/dist/css/bootstrap.css';
+require('bootstrap/dist/css/bootstrap.css');
 
-import './main.css';
+class Gentelella extends Component {
+  componentWillMount() {
+    document.body.className = 'nav-md';
 
-class Gentelella extends React.Component {
-
-    componentWillMount() {
-        const { loadCss } = this.props;
-        const envClass = this.props.fixedFooter ? 'nav-md footer_fixed' : 'nav-md';
-        _$('body').addClass(envClass);
-
-        if (loadCss) {
-            require('./gentelella.css');
-        }
+    if (this.props.fixedFooter) {
+      document.body.className += ' footer_fixed'
     }
 
-    render() {
-        return (
-            <div className={"container body"}>
-                <div className={"main_container"}>
-                    {this.props.children}
-                </div>
-            </div>
-        );
+    if (this.props.fixedSidebar) {
+      document.body.className += ' menu_fixed'
     }
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+
+      <div className={'container body'}>
+        <div className={'main_container'}>
+          { children }
+        </div>
+      </div>
+    )
+  }
 }
 
 Gentelella.propTypes = {
-    fixedFooter: PropTypes.bool.isRequired,
-    loadCss: PropTypes.bool.isRequired
+  children: PropTypes.any,
+  fixedFooter: PropTypes.bool.isRequired,
+  fixedSidebar: PropTypes.bool.isRequired
 };
 
 Gentelella.defaultProps = {
-    fixedFooter: false,
-    loadCss: true
+  fixedFooter: false,
+  fixedSidebar: false
 };
 
-export default Gentelella;
+export default Gentelella

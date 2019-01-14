@@ -35,7 +35,7 @@ SearchWidget.propTypes = {
 
 SearchWidget.defaultProps = {
     value: currentValue,
-    onChange: event => { currentValue = event.target.value;},
+    onChange: value => { currentValue = value;},
     placeholder: 'Search for...',
     buttonLabel: <i className='fa fa-search' />,
     onClick: e => {},

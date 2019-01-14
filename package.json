@@ -1,9 +1,28 @@
 {
   "name": "react-gentelella",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Gentelella theme port for React",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepublish": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "author": {
+    "name": "Filipe Silva",
+    "email": "silvam.filipe@gmail.com",
+    "url": "https://github.com/silvamfilipe"
+  },
   "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "gi+https://github.com/silvamfilipe/react-gentelella.git"
@@ -13,39 +32,52 @@
   },
   "homepage": "https://github.com/silvamfilipe/react-gentelella/blob/master/README.md",
   "peerDependencies": {
-    "react": "^16.4.0"
+    "formik": "^1.4.1",
+    "pnotify": "^3",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-star-rating-component": "^1.4.1",
+    "react-tagsinput": "^3.19.0",
+    "react-input-autosize": "^2.2.1"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "gentelella": "^1.4.0",
-    "jquery": "^3.3.1",
-    "pnotify": "^3.2.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.2",
-    "react-transition-group": "^1.2.1",
-    "webpack": "^2.6.1"
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "bootstrap": "^3.4",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "formik": "^1.4.1",
+    "gh-pages": "^2.0.1",
+    "pnotify": "^3",
+    "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.6.3",
+    "react-input-autosize": "^2.2.1",
+    "react-scripts": "^2.1.1",
+    "react-star-rating-component": "^1.4.1",
+    "react-tagsinput": "^3.19.0",
+    "react-transition-group": "^2.5.1",
+    "rollup": "^0.67.4",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-url": "^2.1.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "build": "webpack",
-    "storybook": "start-storybook -s ./node_modules -p 9001 -c .storybook"
-  },
-  "author": {
-    "name": "Filipe Silva",
-    "email": "silvam.filipe@gmail.com",
-    "url": "https://github.com/silvamfilipe"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1",
-    "@storybook/addon-knobs": "^3.4.10",
-    "@storybook/react": "^3.4.10",
-    "css-loader": "^1.0.0",
-    "style-loader": "^0.23.0"
-  }
+  "files": [
+    "dist"
+  ]
 }

@@ -1,0 +1,84 @@
+blockquote footer{
+    position: inherit !important;
+}
+
+.form-group.has-feedback label span {
+    display: inline !important;
+}
+
+.form-control-feedback.left {
+    left: 1px !important;
+}
+
+.form-control-feedback.right {
+    right: 1px !important;
+}
+
+span.required {
+    color: red;
+}
+
+span.star-stack {
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+i.fa.half-a-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dv-star-rating {
+    padding-top: 4px;
+}
+
+
+.react-tagsinput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.react-tagsinput-tag {
+    background-color: #1ABB9C   ;
+    border-radius: 3px;
+    border: 0 solid #198c70;
+    color: #fff;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    padding: 0 5px 2px;
+}
+
+.react-tagsinput-remove {
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+}
+
+.react-tagsinput-tag a::before {
+    content: "   ×";
+}
+
+.react-tagsinput-input {
+    background: transparent;
+    border: 0;
+    color: #777;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    margin-top: 1px;
+    outline: none;
+    padding: 5px;
+    width: 80px;
+}
+
+.react-tagsinput-input input{ border-width: 0}
