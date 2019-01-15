@@ -4,6 +4,12 @@ import { Formik } from 'formik';
 import { Button, Col, FormGroup, Grid, Row } from 'react-bootstrap';
 
 import GeneralPanelToolbox from '../../app/general-panel-toolbox';
+import * as Yup from 'yup'
+
+const Schema = Yup.object().shape({
+  selectMultiple3: Yup.array()
+    .required("You need to select at least one value")
+});
 
 class FormBasicElements extends Component {
 
@@ -17,9 +23,10 @@ class FormBasicElements extends Component {
         <PanelBody>
           <br/>
           <Formik
+            validationSchema={ Schema }
             onSubmit={ values => console.log(values) }
             initialValues={{defaultInput: '', dateOfBirth3: '', password: 'passwordonetwo', customSelect3: '', select3: '',
-              selectGrouped3: '', selectMultiple3: [], tagsInput3: ['react', 'gentelella']}}
+              selectMultiple3: [], tagsInput3: ['react', 'gentelella']}}
             render={props => (
               <Form onSubmit={ props.handleSubmit }>
                 <Field name="defaultInput3" label="Default Input" formProps={ props } placeholder="Default input" />
@@ -65,7 +72,7 @@ class FormBasicElements extends Component {
                   <option value="TX">Texas</option>
                 </Select>
 
-                <Select label="Select Grouped" name="selectGrouped3" formProps={ props }>
+                <Select label="Select Grouped" name="selectGrouped3" >
                   <optgroup label="Alaskan/Hawaiian Time Zone">
                     <option value="AK">Alaska</option>
                     <option value="HI">Hawaii</option>
@@ -128,7 +135,7 @@ class FormBasicElements extends Component {
                   </optgroup>
                 </Select>
 
-                <Select name="selectMultiple3" multiple label={"Select Multiple"} formProps={ props }>
+                <Select name="selectMultiple3" multiple required label={"Select Multiple"} formProps={ props }>
                   <option value="1">Choose option</option>
                   <option value="2">Option one</option>
                   <option value="3">Option two</option>
