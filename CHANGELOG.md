@@ -5,9 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v0.7.0] 2019-01-17
 ### Added
 - Checkbox input component
-
 ### Fixed
 - Select component with multiple behavior
 
@@ -88,7 +89,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Package and repository setup
 
-[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.0...HEAD
+[v0.6.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.5.1...v0.6.0
 [v0.5.1]: https://github.com/silvamfilipe/react-gentelella/compare/v0.5.0...v0.5.1
 [v0.5.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.4.0...v0.5.0
