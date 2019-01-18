@@ -12,9 +12,12 @@ class PageContentProvider extends Component {
         fixedFooter: document.body.className.match(/(footer_fixed)/i) && true,
     };
 
+    _isMounted = false;
+
     componentDidMount() {
         this.updateHeight();
         window.addEventListener('resize', this.handleResize);
+        this._isMounted = true;
     }
 
     updateBodyClass = () => {
@@ -27,6 +30,7 @@ class PageContentProvider extends Component {
     }
 
     updateSideBar = height => {
+        if (!this._isMounted) return;
         if (this.state.fixedSidebar) {
           this.setState({sideBarHeight: window.innerHeight});
           return;
@@ -37,6 +41,7 @@ class PageContentProvider extends Component {
     };
 
     updateHeight = () => {
+        if (!this._isMounted) return;
         const footerHeight = this.state.fixedFooter ? 0 : document.getElementById('footer').scrollHeight;
         const innerHeight = window.innerHeight - (footerHeight);
         const bodyHeight = document.getElementById('main-content').scrollHeight;
@@ -56,6 +61,7 @@ class PageContentProvider extends Component {
     componentWillUnmount() {
         clearInterval(this.interval);
         document.removeEventListener('resize', this.handleResize);
+        this._isMounted = false;
     }
 
     render() {

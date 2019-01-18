@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Badge from "react-bootstrap/es/Badge";
 import { TopUserMenu, MenuItem } from 'react-gentelella';
 
@@ -19,7 +20,7 @@ const UserMenu = () => (
             <a href="/">Help</a>
         </MenuItem>
         <MenuItem>
-            <a href="/"><i className="fa fa-sign-out pull-right"/>&nbsp;Log Out</a>
+            <Link to="/ui-elements/typography"><i className="fa fa-sign-out pull-right"/>&nbsp;Log Out</Link>
         </MenuItem>
     </TopUserMenu>
 );
