@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[v0.6.0] 2019-01-14
+## [v0.7.0] 2019-01-17
+### Added
+- Checkbox input component
+### Fixed
+- Select component with multiple behavior
+
+## [v0.6.0] 2019-01-14
 ### Added
 - Tags input field component
 - Select input field component
@@ -21,51 +27,55 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Better Gentelella/Bootstrap CSS integration
 - Sidebar menu bugs
 
-[v0.5.1] 2018-09-20
+### Removed
+- jQuery usage (still a dependency of PNotify used in Notification component)
+
+## [v0.5.1] 2018-09-20
 ### Fixed
 - Import statements for tabs 
 
-[v0.5.0] 2018-09-20
+## [v0.5.0] 2018-09-20
 ### Added
 - Tabs component.
 ### Fixed
 - Console logs on notification component 
 
-[v0.4.0] 2018-09-04
+## [v0.4.0] 2018-09-04
 ### Added
 - PNotify notification component.  
 
-[v0.3.1] 2018-09-03
+## [v0.3.1] 2018-09-03
 ### fixed
 - Input props passed to the wrapped input on date time picker component. 
 
-[v0.3.0] 2018-09-03
+## [v0.3.0] 2018-09-03
 ### Added
 - Date time picker form component
 
 
-[v0.2.5] 2018-08-31
+## [v0.2.5] 2018-08-31
 ### Changed
 - A prop passed to Gentelella can enable/disable original CSS file to be loaded
 
 - typo in import index file
-[v0.2.4] 2018-08-31
+
+## [v0.2.4] 2018-08-31
 ### Fixed
 - typo in import index file
 
-[v0.2.3] 2018-08-31
+## [v0.2.3] 2018-08-31
 ### Added
 - Version of gentelella without the original CSS (for css override by the app)
 
-[v0.2.2] 2018-08-29
+## [v0.2.2] 2018-08-29
 ### Fixed
 - Export statements to properly add all modules to the build package
 
-[v0.2.1] 2018-08-28
+## [v0.2.1] 2018-08-28
 ### Fixed
 - Create an updated build
 
-[v0.2.0] 2018-08-28
+## [v0.2.0] 2018-08-28
 ### Added
 - Left side bar, side bar menu and side bar user info
 - Header, header menu and side bar toggle
@@ -75,11 +85,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - CSS warnings in deprecated gradient usage
 
-[v0.1.0] 2018-08-26
+## [v0.1.0] 2018-08-26
 ### Added
-- Package ans repository setup
+- Package and repository setup
 
-[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.0...HEAD
+[v0.6.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.6.0...v0.7.0
+[v0.6.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.5.1...v0.6.0
 [v0.5.1]: https://github.com/silvamfilipe/react-gentelella/compare/v0.5.0...v0.5.1
 [v0.5.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.3.1...v0.4.0
