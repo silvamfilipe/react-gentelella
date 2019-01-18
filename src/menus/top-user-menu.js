@@ -24,11 +24,19 @@ class TopUserMenu extends Component {
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener('onClickMenuItem', this.menuClicked);
   }
 
   componentWillUnmount() {
+    document.removeEventListener('onClickMenuItem', this.menuClicked);
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
+
+  menuClicked = (e) => {
+    if (!this.state.open) return;
+
+    this.setState({open: false});
+  };
 
   handleClickOutside = e => {
     if (!this.state.open) return;
@@ -42,8 +50,8 @@ class TopUserMenu extends Component {
     const openClass = this.state.open ? 'open' : '';
     const { name, picture, children } = this.props;
     return (
-      <li className={openClass}>
-        <a ref={this.setWrapperRef} href="#" onClick={this.handleClick} className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <li ref={this.setWrapperRef} className={openClass}>
+        <a href="#" onClick={this.handleClick} className="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           { picture } { name }
           &nbsp;<span className=" fa fa-angle-down"/>
         </a>
