@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "083a3bc4905e63653d1e",
+    "revision": "b1c5ce3d7fc382a84f59",
     "url": "/react-gentelella/static/css/main.a7e267e6.chunk.css"
   },
   {
-    "revision": "083a3bc4905e63653d1e",
-    "url": "/react-gentelella/static/js/main.083a3bc4.chunk.js"
+    "revision": "b1c5ce3d7fc382a84f59",
+    "url": "/react-gentelella/static/js/main.b1c5ce3d.chunk.js"
   },
   {
-    "revision": "db70304859fe0c5669f0",
+    "revision": "aba21d9e13e01ee524e7",
     "url": "/react-gentelella/static/css/1.b147e1cf.chunk.css"
   },
   {
-    "revision": "db70304859fe0c5669f0",
-    "url": "/react-gentelella/static/js/1.db703048.chunk.js"
+    "revision": "aba21d9e13e01ee524e7",
+    "url": "/react-gentelella/static/js/1.aba21d9e.chunk.js"
   },
   {
     "revision": "a4d3b8bc335a49f8f76c",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/react-gentelella/static/media/glyphicons-halflings-regular.f4769f9b.eot"
   },
   {
-    "revision": "fa2772327f55d8198301fdb8bcfc8158",
-    "url": "/react-gentelella/static/media/glyphicons-halflings-regular.fa277232.woff"
-  },
-  {
     "revision": "448c34a56d699c29117adc64c43affeb",
     "url": "/react-gentelella/static/media/glyphicons-halflings-regular.448c34a5.woff2"
+  },
+  {
+    "revision": "fa2772327f55d8198301fdb8bcfc8158",
+    "url": "/react-gentelella/static/media/glyphicons-halflings-regular.fa277232.woff"
   },
   {
     "revision": "e18bbf611f2a2e43afc071aa2f4e1512",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/react-gentelella/static/media/glyphicons-halflings-regular.89889688.svg"
   },
   {
-    "revision": "26d1a62908b029a9723851295998d4d6",
+    "revision": "2bde7d825c90bfba93456d38ff6c4db7",
     "url": "/react-gentelella/index.html"
   }
 ];
