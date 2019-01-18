@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import PageContentProvider from "./layout-structure/page-content-provider";
+
 
 require('bootstrap/dist/css/bootstrap.css');
 
@@ -22,7 +24,9 @@ class Gentelella extends Component {
 
       <div className={'container body'}>
         <div className={'main_container'}>
+          <PageContentProvider>
           { children }
+          </PageContentProvider>
         </div>
       </div>
     )

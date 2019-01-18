@@ -30,28 +30,42 @@ class PageContentProvider extends Component {
     }
 
     updateSideBar = height => {
-        if (!this._isMounted) return;
-        if (this.state.fixedSidebar) {
-          this.setState({sideBarHeight: window.innerHeight});
-          return;
-        }
+        try {
+            if (this.state.fixedSidebar) {
+              this.setState({sideBarHeight: window.innerHeight});
+              return;
+            }
 
-        const sideBarHeight = Math.max(height, window.innerHeight);
-        this.setState({sideBarHeight});
+            const sideBarHeight = Math.max(height, window.innerHeight);
+            this.setState({sideBarHeight});
+        } catch (e) {
+            if (undefined !== console) {
+                console.log('Skip height update: not mounted!');
+            }
+        }
     };
 
     updateHeight = () => {
-        if (!this._isMounted) return;
-        const footerHeight = this.state.fixedFooter ? 0 : document.getElementById('footer').scrollHeight;
-        const innerHeight = window.innerHeight - (footerHeight);
-        const bodyHeight = document.getElementById('main-content').scrollHeight;
+        if (!document.getElementById('main-content')) return;
 
-        if (bodyHeight < innerHeight) {
-            this.setState({ contentHeight: innerHeight, sideBarHeight: innerHeight});
-            return;
+        try {
+            const footerHeight = this.state.fixedFooter ? 0 : document.getElementById('footer').scrollHeight;
+            const innerHeight = window.innerHeight - (footerHeight);
+            const bodyHeight = document.getElementById('main-content').scrollHeight;
+
+            if (bodyHeight < innerHeight) {
+                this.setState({ contentHeight: innerHeight, sideBarHeight: innerHeight});
+                return;
+            }
+
+            this.setState({ contentHeight: bodyHeight, sideBarHeight: bodyHeight});
+        } catch (e) {
+            if (undefined !== console) {
+                console.log('Skip height update: not mounted!');
+            }
         }
 
-        this.setState({ contentHeight: bodyHeight, sideBarHeight: bodyHeight});
+
     };
 
     handleResize = () => {
@@ -64,6 +78,8 @@ class PageContentProvider extends Component {
         this._isMounted = false;
     }
 
+    toggleNav = () => this.setState({navSmall: !this.state.navSmall});
+
     render() {
         const { children } = this.props;
         return (
@@ -71,7 +87,7 @@ class PageContentProvider extends Component {
                 ...this.state,
                 updateHeight: this.updateHeight,
                 updateSideBar: this.updateSideBar,
-                toggleNav: () => this.setState({navSmall: !this.state.navSmall})
+                toggleNav: this.toggleNav
             }}>
                 { children }
             </pageContentContext.Provider>
