@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-gentelella/precache-manifest.2a685f07395f5a25023b2d3694bea11a.js"
+  "/react-gentelella/precache-manifest.243514fa1662edef6da77dba1c34786c.js"
 );
 
 workbox.clientsClaim();
