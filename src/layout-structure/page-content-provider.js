@@ -43,7 +43,6 @@ class PageContentProvider extends Component {
             const footerHeight = this.state.fixedFooter ? 0 : document.getElementById('footer').scrollHeight;
             const innerHeight = window.innerHeight - (footerHeight);
             const bodyHeight = document.getElementById('main-content').scrollHeight;
-            debugger;
             if (bodyHeight < innerHeight) {
                 this.setState({ contentHeight: innerHeight, sideBarHeight: innerHeight});
                 return;
