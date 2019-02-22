@@ -1,7 +1,7 @@
 {
   "main.css": "/react-gentelella/static/css/main.a7e267e6.chunk.css",
-  "main.js": "/react-gentelella/static/js/main.b1c5ce3d.chunk.js",
-  "main.js.map": "/react-gentelella/static/js/main.b1c5ce3d.chunk.js.map",
+  "main.js": "/react-gentelella/static/js/main.f217ab49.chunk.js",
+  "main.js.map": "/react-gentelella/static/js/main.f217ab49.chunk.js.map",
   "static/css/1.b147e1cf.chunk.css": "/react-gentelella/static/css/1.b147e1cf.chunk.css",
   "static/js/1.aba21d9e.chunk.js": "/react-gentelella/static/js/1.aba21d9e.chunk.js",
   "static/js/1.aba21d9e.chunk.js.map": "/react-gentelella/static/js/1.aba21d9e.chunk.js.map",
@@ -11,6 +11,6 @@
   "static/css/main.a7e267e6.chunk.css.map": "/react-gentelella/static/css/main.a7e267e6.chunk.css.map",
   "static/css/1.b147e1cf.chunk.css.map": "/react-gentelella/static/css/1.b147e1cf.chunk.css.map",
   "index.html": "/react-gentelella/index.html",
-  "precache-manifest.1b078ad9065ddf26043f55c7860fd8ca.js": "/react-gentelella/precache-manifest.1b078ad9065ddf26043f55c7860fd8ca.js",
+  "precache-manifest.2a685f07395f5a25023b2d3694bea11a.js": "/react-gentelella/precache-manifest.2a685f07395f5a25023b2d3694bea11a.js",
   "service-worker.js": "/react-gentelella/service-worker.js"
 }
