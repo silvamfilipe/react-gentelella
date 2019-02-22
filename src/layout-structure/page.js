@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types';
-import PageContentProvider, { PageContentConsumer } from './page-content-provider';
+import { PageContentConsumer } from './page-content-provider';
 
 class Page extends Component {
 
@@ -35,24 +35,22 @@ class Page extends Component {
     render() {
         const { children } = this.props;
         return (
-            <PageContentProvider>
-                <PageContentConsumer>
-                    {({contentHeight, fixedFooter}) => (
-                        <div style={ { minHeight: contentHeight } } className="right_col" role="main">
-                            <div ref={this.container} id="main-content" className="main-content">
-                                { children }
-                                { fixedFooter ? (
-                                  <Fragment>
-                                    <br />&nbsp;
-                                    <br />&nbsp;
-                                    <br />&nbsp;
-                                  </Fragment>
-                                  ): '' }
-                            </div>
+            <PageContentConsumer>
+                {({contentHeight, fixedFooter}) => (
+                    <div style={ { minHeight: contentHeight } } className="right_col" role="main">
+                        <div ref={this.container} id="main-content" className="main-content">
+                            { children }
+                            { fixedFooter ? (
+                              <Fragment>
+                                <br />&nbsp;
+                                <br />&nbsp;
+                                <br />&nbsp;
+                              </Fragment>
+                              ): '' }
                         </div>
-                    )}
-                </PageContentConsumer>
-            </PageContentProvider>
+                    </div>
+                )}
+            </PageContentConsumer>
         );
     }
 }
