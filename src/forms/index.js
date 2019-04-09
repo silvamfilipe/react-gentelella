@@ -7,6 +7,7 @@ export { default as ToggleButtonOption } from './toggle-button-option';
 export { default as StarRating } from './star-rating';
 export { default as TextArea} from './text-area';
 export { default as TagsField} from './tags-input';
+export { default as RadioOptions} from './radio-opntions';
 
 import _Select from './select';
 export { _Select as Select };

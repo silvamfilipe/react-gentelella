@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, PanelHeader, PanelBody, Form, Field, TextArea, Select, TagsField, Checkbox } from 'react-gentelella';
+import { Panel, PanelHeader, PanelBody, Form, Field, TextArea, Select, TagsField, Checkbox, RadioOptions } from 'react-gentelella';
 import { Formik } from 'formik';
 import { Button, Col, FormGroup, Grid, Row } from 'react-bootstrap';
 
@@ -8,7 +8,8 @@ import * as Yup from 'yup'
 
 const Schema = Yup.object().shape({
   selectMultiple3: Yup.array()
-    .required("You need to select at least one value")
+    .required("You need to select at least one value"),
+
 });
 
 class FormBasicElements extends Component {
@@ -149,14 +150,23 @@ class FormBasicElements extends Component {
 
                 <FormGroup>
                   <label className="col-md-3 col-sm-3 col-xs-12 control-label">
-                    Checkboxes and radios<br />
-                    <small className="text-navy">Normal Bootstrap elements</small>
+                    Bootstrap checkbox
                   </label>
                   <div className="col-md-9 col-sm-9 col-xs-12">
                     <Checkbox name="opt13" value="one" label="Option one. Select more than one options" formProps={ props } />
                     <Checkbox name="opt23" value="two" label="Option two. Select more than one options" formProps={ props } />
                   </div>
                 </FormGroup>
+
+                <RadioOptions
+                  name="optionsRadios"
+                  formProps={ props }
+                  label="Bootstrap radios"
+                  options={[
+                    { label: 'Option one. only select one option', value: 'option1' },
+                    { label: 'Option two. only select one option', value: 'option2' }
+                  ]}
+                />
 
                 <hr/>
                 <FormGroup>
