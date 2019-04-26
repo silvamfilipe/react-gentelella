@@ -1,6 +1,6 @@
 {
   "name": "react-gentelella",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Gentelella theme port for React",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
