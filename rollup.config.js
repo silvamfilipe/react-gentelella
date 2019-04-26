@@ -24,11 +24,13 @@ export default {
   plugins: [
     external(),
     postcss({
-      modules: true
+      modules: true,
+      extensions: [ '.css' ],
     }),
     url(),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      plugins: [ 'external-helpers' ]
     }),
     resolve(),
     commonjs()

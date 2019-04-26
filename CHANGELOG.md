@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Label layout when set to vertical now works 
 
+## [v0.7.4] 2019-04-26
+### Fixed
+- Package dependencies and peer dependencies
+
 ## [v0.7.3] 2019-02-22
 ### Fixed
 - Removed debugger into
