@@ -5,10 +5,6 @@ import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 
-import 'pnotify/dist/pnotify.css';
-import 'pnotify/dist/pnotify.buttons.css';
-import 'pnotify/dist/pnotify.mobile.css';
-import 'pnotify/dist/pnotify.nonblock.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -3,10 +3,6 @@ import 'pnotify/dist/pnotify.desktop.js';
 import 'pnotify/dist/pnotify.mobile.js';
 import 'pnotify/dist/pnotify.nonblock.js';
 import 'pnotify/dist/pnotify.animate.js';
-import 'pnotify/dist/pnotify.css';
-import 'pnotify/dist/pnotify.buttons.css';
-import 'pnotify/dist/pnotify.mobile.css';
-import 'pnotify/dist/pnotify.nonblock.css';
 
 import PNotify from 'pnotify';
 import PropTypes from 'prop-types';
