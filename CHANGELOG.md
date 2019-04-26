@@ -5,10 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v0.8.0] 2019-04-26
 ### Added
 - Radio options input
 ### Fixed
-- Label layout when set to vertical now works 
+- Label layout when set to vertical now works
+- Notifications CSS problem with rollup
 
 ## [v0.7.4] 2019-04-26
 ### Fixed
@@ -110,7 +113,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Package and repository setup
 
-[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.3...HEAD
+[Unreleased]: https://github.com/silvamfilipe/react-gentelella/compare/v0.8.0...HEAD
+[v0.8.0]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.4...v0.8.0
+[v0.7.4]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.3...v0.7.4
 [v0.7.3]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.2...v0.7.3
 [v0.7.2]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.1...v0.7.2
 [v0.7.1]: https://github.com/silvamfilipe/react-gentelella/compare/v0.7.0...v0.7.1
