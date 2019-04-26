@@ -1,6 +1,6 @@
 {
   "name": "react-gentelella",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "description": "Gentelella theme port for React",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -28,7 +28,7 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepublish": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
+    "predeploy": "cd example && yarn && yarn build",
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {

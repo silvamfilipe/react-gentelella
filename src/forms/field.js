@@ -22,7 +22,9 @@ const Field = props => {
       : `${inputClass} has-feedback-left`;
 
   const labelRender = label
-    ? (<label className="control-label col-md-3 col-sm-3 col-xs-12" htmlFor={ name }>{ label } { requiredTag }</label>)
+    ? layout !== 'vertical'
+      ? (<label className="control-label col-md-3 col-sm-3 col-xs-12" htmlFor={ name }>{ label } { requiredTag }</label>)
+      : (<label htmlFor={ name }>{ label } { requiredTag }</label>)
     : '';
 
   const layoutClass = layout === 'centered'
