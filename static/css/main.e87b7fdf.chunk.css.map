@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,iBACI,eAAiB,CACjB,cACJ,CAEA,MACI,eACJ","file":"main.e87b7fdf.chunk.css","sourcesContent":[".code-sample pre {\n    background: white;\n    border-width: 0;\n}\n\n.hljs {\n    background: white;\n}\n"]}
